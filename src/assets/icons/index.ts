@@ -23,3 +23,7 @@ export { default as PauseSvg } from './pause.svg';
 export { default as ArrowDownSvg } from './arrow_down.svg';
 export { default as RedArrowRightSvg } from './red_arrow_right.svg';
 export { default as DoubleArrowRightSvg } from './double_arrow_right.svg';
+export { default as FireSvg } from './fire.svg';
+export { default as FireActiveSvg } from './fire_active.svg';
+export { default as FollowedSvg } from './followed.svg';
+export { default as StarActiveSvg } from './star_active.svg';

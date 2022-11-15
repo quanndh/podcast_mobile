@@ -4,8 +4,8 @@ import { ScaledSheet } from 'react-native-size-matters';
 import {
   BookActiveSvg,
   BookSvg,
-  CreatorActiveSvg,
-  CreatorSvg,
+  FireActiveSvg,
+  FireSvg,
   HomeActiveSvg,
   HomeSvg,
   NextSvg,
@@ -55,9 +55,9 @@ const BottomTabBar = ({ state, descriptors, navigation }: any) => {
     },
     {
       index: 3,
-      title: 'Creator',
-      icon: title !== 'CreatorTab' ? <CreatorSvg /> : <CreatorActiveSvg />,
-      iconActive: <CreatorActiveSvg />,
+      title: 'Khám phá kênh',
+      icon: title !== 'CreatorTab' ? <FireSvg /> : <FireActiveSvg />,
+      iconActive: <FireActiveSvg />,
     },
     {
       index: 4,
@@ -166,6 +166,7 @@ const styles = ScaledSheet.create({
   textActive: {
     color: Colors.accent,
     fontSize: 12,
+    marginTop: 5,
     // fontFamily: 'Montserrat-SemiBold',
   },
   text: {

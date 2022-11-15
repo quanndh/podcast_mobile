@@ -1,15 +1,15 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Text, View } from 'react-native';
 import { scale, ScaledSheet } from 'react-native-size-matters';
+import { FlatGrid } from 'react-native-super-grid';
 import AppHeader from '../../components/AppHeader';
 import AppSelectButton, { Option } from '../../components/AppSelectButton';
 import Book from '../../components/Book';
+import ListenStatistic from '../../components/ListenStatistic';
 import Space from '../../components/Space';
 import { DefaultContainerStyles } from '../../constants/styles';
-import Status from './components/Status';
-import { FlatGrid } from 'react-native-super-grid';
 import { DEVICE_WIDTH } from '../../constants/variables';
+import Status from '../BookTab/components/Status';
 
 const genreOptions: Option[] = [
   { text: 'Tiểu sử & lịch sử', value: 'history' },
@@ -47,7 +47,7 @@ const recommend = [
   },
 ];
 
-const BookTab = () => {
+const PodcastTab = () => {
   const [genre, setGenre] = useState<string>();
   const [sort, setSort] = useState<string>();
 
@@ -71,9 +71,9 @@ const BookTab = () => {
       ListHeaderComponent={
         <>
           <AppHeader />
-          <Status />
+          <ListenStatistic />
           <View style={styles.row}>
-            <AppSelectButton onChange={handleChangeGenre} value={genre} title="Thể loại" options={genreOptions} />
+            <AppSelectButton onChange={handleChangeGenre} value={genre} title="Lĩnh vực" options={genreOptions} />
             <Space size={16} />
             <AppSelectButton onChange={handleChangeSort} value={sort} title="Sắp xếp theo" options={sortOptions} />
           </View>
@@ -103,5 +103,4 @@ const styles = ScaledSheet.create({
     marginVertical: '20@vs',
   },
 });
-
-export default BookTab;
+export default PodcastTab;
