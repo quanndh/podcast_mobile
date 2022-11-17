@@ -34,11 +34,11 @@ const styles = ScaledSheet.create({
   },
   infoContainer: {
     flex: 1,
-    justifyContent: 'space-between',
   },
   row: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    marginTop: '4@vs',
   },
   logo: {
     height: '48@s',
