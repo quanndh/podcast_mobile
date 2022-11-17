@@ -31,7 +31,7 @@ const creators = [
     follower: 1.1,
     avatar:
       'https://scontent.fhan17-1.fna.fbcdn.net/v/t1.15752-9/313286831_832078111278194_3134596555107886310_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=ae9488&_nc_ohc=nWngr-RMpt0AX8YIFml&_nc_ht=scontent.fhan17-1.fna&oh=03_AdRoD_Pj4zg-MeZZaK1p21EKsAEhf_Vk_FNR0udBeqEc9A&oe=63948626',
-    isFollow: true,
+    isStar: true,
   },
   {
     name: 'Jenny Wilson',
@@ -100,7 +100,6 @@ const CreatorTab = () => {
   return (
     <FlatGrid
       style={styles.container}
-      // itemDimension={scale((DEVICE_WIDTH - 140) / 3)}
       showsVerticalScrollIndicator={false}
       ListHeaderComponent={
         <>
@@ -117,7 +116,7 @@ const CreatorTab = () => {
       ListFooterComponent={<Space size={112} />}
       data={creators}
       renderItem={renderItem}
-      keyExtractor={(item, index) => String(index) + 'creator'}
+      keyExtractor={(item, index) => String(index + Math.random() * 1000)}
       itemContainerStyle={styles.itemContainer}
     />
   );
