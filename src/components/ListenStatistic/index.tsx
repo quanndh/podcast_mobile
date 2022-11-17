@@ -4,6 +4,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import { ScaledSheet } from 'react-native-size-matters';
 import { FollowedSvg, HeadsetSvg, PauseSvg, StarActiveSvg } from '../../assets/icons';
 import { Colors } from '../../constants/colors';
+import Space from '../Space';
 
 const ListenStatistic = () => {
   return (
@@ -16,6 +17,7 @@ const ListenStatistic = () => {
         <Text style={styles.greyText}>Đang theo dõi</Text>
         <View style={styles.row}>
           <Text style={styles.text}>32</Text>
+          <Space />
           <FollowedSvg />
         </View>
       </View>
@@ -23,6 +25,7 @@ const ListenStatistic = () => {
         <Text style={styles.greyText}>Đang theo dõi</Text>
         <View style={styles.row}>
           <Text style={styles.text}>32</Text>
+          <Space />
           <StarActiveSvg />
         </View>
       </View>
@@ -30,6 +33,7 @@ const ListenStatistic = () => {
         <Text style={styles.greyText}>Đang theo dõi</Text>
         <View style={styles.row}>
           <Text style={styles.text}>32</Text>
+          <Space />
           <HeadsetSvg />
         </View>
       </View>
@@ -37,6 +41,7 @@ const ListenStatistic = () => {
         <Text style={styles.greyText}>Đang theo dõi</Text>
         <View style={styles.row}>
           <Text style={styles.text}>32</Text>
+          <Space />
           <PauseSvg />
         </View>
       </View>

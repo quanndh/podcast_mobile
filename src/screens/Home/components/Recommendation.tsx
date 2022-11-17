@@ -28,7 +28,7 @@ const Recommendation: React.FC<RecommendationProps> = ({ topic, data }) => {
 
 const styles = ScaledSheet.create({
   container: {
-    marginVertical: '20@vs',
+    marginVertical: '16@vs',
   },
   title: {
     fontSize: 18,

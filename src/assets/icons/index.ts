@@ -21,6 +21,7 @@ export { default as CalendarGreySvg } from './calendar_grey.svg';
 export { default as HeadsetSvg } from './headset.svg';
 export { default as PauseSvg } from './pause.svg';
 export { default as ArrowDownSvg } from './arrow_down.svg';
+export { default as ArrowRighrSvg } from './arrow_right.svg';
 export { default as RedArrowRightSvg } from './red_arrow_right.svg';
 export { default as DoubleArrowRightSvg } from './double_arrow_right.svg';
 export { default as FireSvg } from './fire.svg';

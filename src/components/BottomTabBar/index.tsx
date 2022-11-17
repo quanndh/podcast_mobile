@@ -1,6 +1,6 @@
-import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { ScaledSheet } from 'react-native-size-matters';
+import React, { useEffect, useState } from 'react';
+import { Text, TouchableOpacity, View } from 'react-native';
+import { scale, ScaledSheet } from 'react-native-size-matters';
 import {
   BookActiveSvg,
   BookSvg,
@@ -19,8 +19,21 @@ import { Colors } from '../../constants/colors';
 import { DEVICE_WIDTH } from '../../constants/variables';
 import AppImage from '../AppImage';
 import Space from '../Space';
+import ProgressLine from '../ProgressLine';
+
+let interval: NodeJS.Timer;
 
 const BottomTabBar = ({ state, descriptors, navigation }: any) => {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    interval = setInterval(() => {
+      setProgress(progress + 1);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, [progress]);
+
   const currentBook = {
     name: 'I love your smile',
     logo: 'https://scontent.fhan17-1.fna.fbcdn.net/v/t1.15752-9/313286831_832078111278194_3134596555107886310_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=ae9488&_nc_ohc=nWngr-RMpt0AX8YIFml&_nc_ht=scontent.fhan17-1.fna&oh=03_AdRoD_Pj4zg-MeZZaK1p21EKsAEhf_Vk_FNR0udBeqEc9A&oe=63948626',
@@ -70,23 +83,30 @@ const BottomTabBar = ({ state, descriptors, navigation }: any) => {
   return (
     <View style={[styles.container]}>
       {currentBook !== null && (
-        <View style={styles.playContainer}>
-          <View style={styles.bookInfo}>
-            <AppImage uri={currentBook.logo} style={styles.bookLogo} />
-            <View>
-              <Text style={styles.bookTitle}>{currentBook.name}</Text>
-              <Text style={styles.bookAuthor}>{currentBook.author}</Text>
+        <View>
+          <View style={styles.playInfoContainer}>
+            <View style={styles.bookInfo}>
+              <AppImage uri={currentBook.logo} style={styles.bookLogo} />
+              <View>
+                <Text style={styles.bookTitle}>{currentBook.name}</Text>
+                <Text style={styles.bookAuthor}>{currentBook.author}</Text>
+              </View>
+            </View>
+            <View style={styles.bookInfo}>
+              <PlaySvg />
+              <Space size={16} />
+              <NextSvg />
             </View>
           </View>
-          <View style={styles.bookInfo}>
-            <PlaySvg />
-            <Space size={16} />
-            <NextSvg />
-          </View>
+
+          <ProgressLine progress={progress} />
         </View>
       )}
       <View style={styles.wrap}>
         {state.routes.map((route: any, index: number) => {
+          if (index > 4) {
+            return null;
+          }
           const { options } = descriptors[route.key];
           const isFocused = state.index === index;
           const onPress = () => {
@@ -153,14 +173,12 @@ const styles = ScaledSheet.create({
     justifyContent: 'space-around',
     flexDirection: 'row',
   },
-  playContainer: {
+  playInfoContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingVertical: '10@vs',
     paddingHorizontal: '10@ms',
-    borderBottomColor: Colors.border,
-    borderBottomWidth: StyleSheet.hairlineWidth,
   },
   wrapIcon: { alignItems: 'center' },
   textActive: {
