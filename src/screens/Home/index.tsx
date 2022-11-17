@@ -64,7 +64,7 @@ const recommend = [
 ];
 const HomeScreen = () => {
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <AppHeader />
       <AppImage uri={banner} style={styles.banner} />
       <WeeklyTrending />

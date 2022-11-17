@@ -64,7 +64,7 @@ const creators = [
 
 const PersonalTab = () => {
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <AppHeader />
       <Space />
       <View style={styles.row}>
