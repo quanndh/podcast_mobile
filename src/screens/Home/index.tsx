@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
-import AppHeader from '../../components/AppHeader';
+import AppSearchHeader from '../../components/AppSearchHeader';
 import AppImage from '../../components/AppImage';
 import Space from '../../components/Space';
 import { DefaultContainerStyles } from '../../constants/styles';
@@ -65,7 +65,7 @@ const recommend = [
 const HomeScreen = () => {
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-      <AppHeader />
+      <AppSearchHeader />
       <AppImage uri={banner} style={styles.banner} />
       <WeeklyTrending />
       <TopCreator />

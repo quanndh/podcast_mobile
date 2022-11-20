@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Text, View } from 'react-native';
 import { scale, ScaledSheet } from 'react-native-size-matters';
 import { FlatGrid } from 'react-native-super-grid';
-import AppHeader from '../../components/AppHeader';
+import AppSearchHeader from '../../components/AppSearchHeader';
 import AppSelectButton, { Option } from '../../components/AppSelectButton';
 import Book from '../../components/Book';
 import ListenStatistic from '../../components/ListenStatistic';
@@ -70,7 +70,7 @@ const PodcastTab = () => {
       showsVerticalScrollIndicator={false}
       ListHeaderComponent={
         <>
-          <AppHeader />
+          <AppSearchHeader />
           <ListenStatistic />
           <View style={styles.row}>
             <AppSelectButton onChange={handleChangeGenre} value={genre} title="Lĩnh vực" options={genreOptions} />

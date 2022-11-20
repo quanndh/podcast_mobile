@@ -20,7 +20,7 @@ const RootNavigator = (props: Partial<RootStackNavigatorProps>) => {
       <Stack.Group>
         <Stack.Screen name="App" component={AppTabNavigator} />
       </Stack.Group>
-      <Stack.Group screenOptions={{ presentation: 'containedModal' }}>
+      <Stack.Group>
         <Stack.Screen name="Auth" component={AuthStackNavigator} />
       </Stack.Group>
     </Stack.Navigator>

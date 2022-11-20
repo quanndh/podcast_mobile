@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "833240716894",
+    "firebase_url": "https://fay-buc.firebaseio.com",
+    "project_id": "fay-buc",
+    "storage_bucket": "fay-buc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:833240716894:android:38216f1938e8bb5137c6cf",
+        "android_client_info": {
+          "package_name": "com.podcast_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "833240716894-paffq9r8khj5ip679d351lmn7mvln4e6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbz8ROg3wG3a8FS83dejGoqfjChgfPuwM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "833240716894-paffq9r8khj5ip679d351lmn7mvln4e6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:833240716894:android:3a82175ad5919c1f37c6cf",
+        "android_client_info": {
+          "package_name": "com.podcast_mobile.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "833240716894-3014eecksr98tj5evl64a17plj064f2d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.podcast_mobile.app",
+            "certificate_hash": "9434b008225b79418383adb14409a6c770ac0d37"
+          }
+        },
+        {
+          "client_id": "833240716894-paffq9r8khj5ip679d351lmn7mvln4e6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbz8ROg3wG3a8FS83dejGoqfjChgfPuwM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "833240716894-paffq9r8khj5ip679d351lmn7mvln4e6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

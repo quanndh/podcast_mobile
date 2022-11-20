@@ -1,4 +1,4 @@
-package com.podcast_mobile;
+package com.podcast_mobile.app;
 
 import com.facebook.react.ReactActivity;
 

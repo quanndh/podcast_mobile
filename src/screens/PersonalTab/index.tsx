@@ -2,7 +2,7 @@ import React from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
 import { ArrowRighrSvg } from '../../assets/icons';
-import AppHeader from '../../components/AppHeader';
+import AppSearchHeader from '../../components/AppSearchHeader';
 import BookRow from '../../components/BookRow';
 import CreatorRow from '../../components/CreatorRow';
 import Space from '../../components/Space';
@@ -65,7 +65,7 @@ const creators = [
 const PersonalTab = () => {
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-      <AppHeader />
+      <AppSearchHeader />
       <Space />
       <View style={styles.row}>
         <Text style={styles.title}>Đang nghe Podcast</Text>

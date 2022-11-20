@@ -1,7 +1,7 @@
 import React from 'react';
 import { FlatList, Text, TouchableOpacity, View } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
-import AppHeader from '../../components/AppHeader';
+import AppSearchHeader from '../../components/AppSearchHeader';
 import NotificationItem from '../../components/NotificationItem';
 import Space from '../../components/Space';
 import { Colors } from '../../constants/colors';
@@ -49,7 +49,7 @@ const NotificationScreen = () => {
       showsVerticalScrollIndicator={false}
       ListHeaderComponent={
         <>
-          <AppHeader />
+          <AppSearchHeader />
           <View style={styles.row}>
             <TouchableOpacity>
               <Text style={[styles.textBtn, styles.textBtnActive]}>Xóa tất cả</Text>

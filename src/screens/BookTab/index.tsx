@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { Text, View } from 'react-native';
 import { scale, ScaledSheet } from 'react-native-size-matters';
-import AppHeader from '../../components/AppHeader';
+import AppSearchHeader from '../../components/AppSearchHeader';
 import AppSelectButton, { Option } from '../../components/AppSelectButton';
 import Book from '../../components/Book';
 import Space from '../../components/Space';
@@ -70,7 +70,7 @@ const BookTab = () => {
       showsVerticalScrollIndicator={false}
       ListHeaderComponent={
         <>
-          <AppHeader />
+          <AppSearchHeader />
           <Status />
           <View style={styles.row}>
             <AppSelectButton onChange={handleChangeGenre} value={genre} title="Thể loại" options={genreOptions} />
