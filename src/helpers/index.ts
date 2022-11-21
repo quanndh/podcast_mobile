@@ -1,8 +1,8 @@
 export const Helpers = {
-  groupTrending: (data: Record<string, string>[]) => {
+  groupArr: (data: Record<string, string>[], n: number = 3) => {
     let group: Record<string, string>[][] = [];
     for (let i = 0, j = 0; i < data.length; i++) {
-      if (i >= 3 && i % 3 === 0) {
+      if (i >= n && i % n === 0) {
         j++;
       }
       group[j] = group[j] || [];

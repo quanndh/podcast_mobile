@@ -91,7 +91,7 @@ const styles = ScaledSheet.create({
   },
   deleteBtn: {
     alignSelf: 'flex-end',
-    marginTop: '20@vs',
+    marginTop: '12@vs',
   },
   itemContainer: {
     padding: '16@s',

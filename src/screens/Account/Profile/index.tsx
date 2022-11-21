@@ -8,6 +8,7 @@ import AppButton from '../../../components/AppButton';
 import AppHeader from '../../../components/AppHeader';
 import AppImage from '../../../components/AppImage';
 import AppText from '../../../components/AppText';
+import Space from '../../../components/Space';
 import { Colors } from '../../../constants/colors';
 import type { AccountStackParams } from '../../../navigators/account.navigator';
 
@@ -68,7 +69,7 @@ const ProfileScreen = () => {
       ListEmptyComponent={
         <AppText style={styles.emptyText}>
           Bạn chưa có nội dung nào, Hãy bắt đầu trở thành <AppText style={{ color: Colors.accent }}>Creator</AppText>
-          ngay!
+          <AppText> </AppText>ngay!
         </AppText>
       }
       renderItem={({ item }) => <View />}

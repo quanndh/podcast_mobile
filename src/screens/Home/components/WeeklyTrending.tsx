@@ -93,7 +93,7 @@ const WeeklyTrending: React.FC<WeeklyTrendingProps> = () => {
   const renderTrending = ({ index }: any) => {
     return (
       <View>
-        {Helpers.groupTrending(trendings)[index].map((x: any, ind: number) => (
+        {Helpers.groupArr(trendings)[index].map((x: any, ind: number) => (
           <View key={ind}>
             <TrendingItem {...x} />
             <Space size={12} />
@@ -122,7 +122,7 @@ const WeeklyTrending: React.FC<WeeklyTrendingProps> = () => {
         width={DEVICE_WIDTH}
         height={DEVICE_HEIGHT / 2}
         autoPlay={false}
-        data={Helpers.groupTrending(trendings)}
+        data={Helpers.groupArr(trendings)}
         renderItem={renderTrending}
         pagingEnabled
         mode="parallax"

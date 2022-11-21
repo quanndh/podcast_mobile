@@ -34,3 +34,6 @@ export { default as FacebookSvg } from './facebook.svg';
 export { default as EyeOpenSvg } from './eye_open.svg';
 export { default as EyeCloseSvg } from './eye_close.svg';
 export { default as LogoutSvg } from './log_out.svg';
+export { default as DotsSvg } from './dots.svg';
+export { default as RedCirclePlusSvg } from './red_circle_plus.svg';
+export { default as DeleteSvg } from './delete.svg';

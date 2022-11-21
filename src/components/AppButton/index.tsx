@@ -17,9 +17,9 @@ interface AppButtonProps {
 const AppButton: React.FC<AppButtonProps> = ({ isText = false, title, primary = false, onPress, style = {}, icon }) => {
   const styles = styleFn(primary, isText);
   return (
-    <TouchableOpacity onPress={onPress} style={isText ? style : [styles.container, style]}>
-      {!isText && icon ? icon : null}
-      <Text style={[styles.text, !isText && icon ? { marginLeft: scale(16) } : {}]}>{title}</Text>
+    <TouchableOpacity onPress={onPress} style={isText ? [styles.textContainer, style] : [styles.container, style]}>
+      {icon ? icon : null}
+      <Text style={[styles.text, style, icon && { marginLeft: scale(isText ? 8 : 16) }]}>{title}</Text>
     </TouchableOpacity>
   );
 };
@@ -37,6 +37,8 @@ const styleFn = (primary: boolean, isText: boolean) =>
       borderColor: Colors.accent,
       borderRadius: '30@s',
     },
+    textContainer: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center' },
+
     text: isText
       ? {
           fontWeight: '500',
