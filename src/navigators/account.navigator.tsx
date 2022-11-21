@@ -1,7 +1,9 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
 import AccountScreen from '../screens/Account/AccountScreen';
+import EditProfileScreen from '../screens/Account/EditProfile';
 import ProfileScreen from '../screens/Account/Profile';
+import TransactionScreen from '../screens/Account/Transaction';
 
 export type AccountStackParams = {
   AccountScreen: undefined;
@@ -23,6 +25,8 @@ const AccountStackNavigator = (props: Partial<AccountStackNavigatorProps>) => {
     <Stack.Navigator {...props} screenOptions={{ headerShown: false }}>
       <Stack.Screen name="AccountScreen" component={AccountScreen} />
       <Stack.Screen name="ProfileScreen" component={ProfileScreen} />
+      <Stack.Screen name="EditProfileScreen" component={EditProfileScreen} />
+      <Stack.Screen name="TransactionScreen" component={TransactionScreen} />
     </Stack.Navigator>
   );
 };

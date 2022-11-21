@@ -17,7 +17,7 @@ interface AppButtonProps {
 const AppButton: React.FC<AppButtonProps> = ({ isText = false, title, primary = false, onPress, style = {}, icon }) => {
   const styles = styleFn(primary, isText);
   return (
-    <TouchableOpacity onPress={onPress} style={isText ? {} : [styles.container, style]}>
+    <TouchableOpacity onPress={onPress} style={isText ? style : [styles.container, style]}>
       {!isText && icon ? icon : null}
       <Text style={[styles.text, !isText && icon ? { marginLeft: scale(16) } : {}]}>{title}</Text>
     </TouchableOpacity>

@@ -7,4 +7,5 @@ export const Colors = {
   selectBorder: '#E0E0E0',
   black: '#04111D',
   facebook: '#1877F2',
+  transactionBg: '#F8F8F8',
 };
