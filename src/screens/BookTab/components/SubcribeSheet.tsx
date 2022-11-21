@@ -1,9 +1,10 @@
 import React from 'react';
 import { forwardRef } from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 import type { Modalize } from 'react-native-modalize';
 import { ScaledSheet } from 'react-native-size-matters';
 import { CalendarGreySvg, DoubleArrowRightSvg } from '../../../assets/icons';
+import AppText from '../../../components/AppText';
 import BottomSheet from '../../../components/BottomSheet';
 import Space from '../../../components/Space';
 import { Colors } from '../../../constants/colors';
@@ -29,27 +30,26 @@ const SubcribeSheet = forwardRef<Modalize, SubcribeSheetProps>(
     return (
       <BottomSheet ref={ref} adjustToContentHeight>
         <View style={styles.container}>
-          <Text style={styles.title}>{type === 'new' ? 'Đăng ký hội viên kênh' : 'Gia hạn sách tóm tắt'}</Text>
+          <AppText style={styles.title}>{type === 'new' ? 'Đăng ký hội viên kênh' : 'Gia hạn sách tóm tắt'}</AppText>
           {type === 'extend' && (
-            // eslint-disable-next-line react-native/no-inline-styles
             <View style={[styles.row, { justifyContent: 'center' }]}>
               <CalendarGreySvg color={Colors.grey} />
               <Space />
-              <Text style={styles.subTitle}>24/12/2023 (còn 293 ngày)</Text>
+              <AppText style={styles.subTitle}>24/12/2023 (còn 293 ngày)</AppText>
             </View>
           )}
-          <Text style={styles.benefitTitle}>Đặc quyền của hội viên</Text>
+          <AppText style={styles.benefitTitle}>Đặc quyền của hội viên</AppText>
           {benefits.map((x, index) => (
             <View key={index} style={[styles.row, index === benefits.length - 1 && styles.lastBenefit]}>
               <DoubleArrowRightSvg />
               <Space />
-              <Text style={styles.benefit}>{x}</Text>
+              <AppText style={styles.benefit}>{x}</AppText>
             </View>
           ))}
           {subcribeOptions.map((x, index) => (
             <TouchableOpacity key={index} style={styles.button} onPress={() => handleSubcribe(x)}>
-              <Text style={styles.btnText}>{x.name}</Text>
-              <Text style={styles.btnText}>{x.fee}</Text>
+              <AppText style={styles.btnText}>{x.name}</AppText>
+              <AppText style={styles.btnText}>{x.fee}</AppText>
             </TouchableOpacity>
           ))}
         </View>

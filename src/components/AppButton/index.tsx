@@ -1,20 +1,25 @@
-import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
-import { ScaledSheet } from 'react-native-size-matters';
+import React, { ReactElement, ReactNode } from 'react';
+import { StyleProp, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
+import { scale, ScaledSheet } from 'react-native-size-matters';
+import { LogoutSvg } from '../../assets/icons';
 import { Colors } from '../../constants/colors';
+import Space from '../Space';
 
 interface AppButtonProps {
   isText?: boolean;
   title: string;
   primary?: boolean;
   onPress: () => void;
+  style?: StyleProp<ViewStyle>;
+  icon?: ReactElement;
 }
 
-const AppButton: React.FC<AppButtonProps> = ({ isText = false, title, primary = false, onPress }) => {
+const AppButton: React.FC<AppButtonProps> = ({ isText = false, title, primary = false, onPress, style = {}, icon }) => {
   const styles = styleFn(primary, isText);
   return (
-    <TouchableOpacity onPress={onPress} style={isText ? {} : styles.container}>
-      <Text style={styles.text}>{title}</Text>
+    <TouchableOpacity onPress={onPress} style={isText ? {} : [styles.container, style]}>
+      {!isText && icon ? icon : null}
+      <Text style={[styles.text, !isText && icon ? { marginLeft: scale(16) } : {}]}>{title}</Text>
     </TouchableOpacity>
   );
 };

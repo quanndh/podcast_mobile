@@ -51,32 +51,57 @@ const BottomTabBar = ({ state, descriptors, navigation }: any) => {
     {
       index: 0,
       title: 'Khám phá',
-      icon: title !== 'HomeTab' ? <HomeSvg /> : <HomeActiveSvg />,
-      iconActive: <HomeActiveSvg />,
+      icon:
+        title !== 'HomeTab' ? (
+          <HomeSvg width={scale(16)} height={scale(16)} />
+        ) : (
+          <HomeActiveSvg width={scale(16)} height={scale(16)} />
+        ),
+      iconActive: <HomeActiveSvg width={scale(16)} height={scale(16)} />,
     },
     {
       index: 1,
       title: 'Sách tóm tắt',
-      icon: title !== 'BookTab' ? <BookSvg /> : <BookActiveSvg />,
-      iconActive: <BookActiveSvg />,
+      icon:
+        title !== 'BookTab' ? (
+          <BookSvg width={scale(16)} height={scale(16)} />
+        ) : (
+          <BookActiveSvg width={scale(16)} height={scale(16)} />
+        ),
+      iconActive: <BookActiveSvg width={scale(16)} height={scale(16)} />,
     },
     {
       index: 2,
       title: 'Podcast',
-      icon: title !== 'PodcastTab' ? <PodcastSvg /> : <PodcastActiveSvg />,
-      iconActive: <PodcastActiveSvg />,
+      icon:
+        title !== 'PodcastTab' ? (
+          <PodcastSvg width={scale(16)} height={scale(16)} />
+        ) : (
+          <PodcastActiveSvg width={scale(16)} height={scale(16)} />
+        ),
+      iconActive: <PodcastActiveSvg width={scale(16)} height={scale(16)} />,
     },
     {
       index: 3,
       title: 'Khám phá kênh',
-      icon: title !== 'CreatorTab' ? <FireSvg /> : <FireActiveSvg />,
-      iconActive: <FireActiveSvg />,
+      icon:
+        title !== 'CreatorTab' ? (
+          <FireSvg width={scale(16)} height={scale(16)} />
+        ) : (
+          <FireActiveSvg width={scale(16)} height={scale(16)} />
+        ),
+      iconActive: <FireActiveSvg width={scale(16)} height={scale(16)} />,
     },
     {
       index: 4,
       title: 'Cá nhân',
-      icon: title !== 'PersonalTab' ? <PersonalSvg /> : <PersonalActiveSvg />,
-      iconActive: <PersonalActiveSvg />,
+      icon:
+        title !== 'PersonalTab' ? (
+          <PersonalSvg width={scale(16)} height={scale(16)} />
+        ) : (
+          <PersonalActiveSvg width={scale(16)} height={scale(16)} />
+        ),
+      iconActive: <PersonalActiveSvg width={scale(16)} height={scale(16)} />,
     },
   ];
 

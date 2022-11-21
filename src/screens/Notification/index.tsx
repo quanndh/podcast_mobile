@@ -1,7 +1,8 @@
 import React from 'react';
-import { FlatList, Text, TouchableOpacity, View } from 'react-native';
+import { FlatList, TouchableOpacity, View } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
 import AppSearchHeader from '../../components/AppSearchHeader';
+import AppText from '../../components/AppText';
 import NotificationItem from '../../components/NotificationItem';
 import Space from '../../components/Space';
 import { Colors } from '../../constants/colors';
@@ -52,11 +53,11 @@ const NotificationScreen = () => {
           <AppSearchHeader />
           <View style={styles.row}>
             <TouchableOpacity>
-              <Text style={[styles.textBtn, styles.textBtnActive]}>Xóa tất cả</Text>
+              <AppText style={[styles.textBtn, styles.textBtnActive]}>Xóa tất cả</AppText>
             </TouchableOpacity>
             <Space />
             <TouchableOpacity>
-              <Text style={styles.textBtn}>Đã đọc</Text>
+              <AppText style={styles.textBtn}>Đã đọc</AppText>
             </TouchableOpacity>
           </View>
         </>

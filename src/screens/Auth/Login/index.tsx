@@ -1,12 +1,4 @@
-import {
-  Keyboard,
-  KeyboardAvoidingView,
-  Platform,
-  Text,
-  TouchableOpacity,
-  TouchableWithoutFeedback,
-  View,
-} from 'react-native';
+import { Keyboard, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
 import React from 'react';
 import { ScaledSheet } from 'react-native-size-matters';
 import { DefaultContainerStyles } from '../../../constants/styles';
@@ -20,6 +12,9 @@ import AppButton from '../../../components/AppButton';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 import type { AuthStackParams } from '../../../navigators/auth.navigation';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { Storage } from '../../../helpers/storage';
+import type { RootStackParams } from '../../../navigators/root.navigator';
+import AppText from '../../../components/AppText';
 
 GoogleSignin.configure({
   scopes: ['https://www.googleapis.com/auth/drive.readonly'], // what API you want to access on behalf of the user, default is email and profile
@@ -34,6 +29,7 @@ interface LoginForm {
 
 const LoginScreen = () => {
   const navigation = useNavigation<NavigationProp<AuthStackParams>>();
+  const navigationRoot = useNavigation<NavigationProp<RootStackParams>>();
 
   const {
     control,
@@ -49,9 +45,11 @@ const LoginScreen = () => {
   const handleGG = async () => {
     try {
       const data = await GoogleSignin.signIn();
-      console.log(data);
+      await Storage.set('isLogin', 'true');
+      navigationRoot.navigate('App');
     } catch (error) {
       console.log({ error });
+      await Storage.set('isLogin', 'false');
     }
   };
 
@@ -64,19 +62,19 @@ const LoginScreen = () => {
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <>
           <AppHeader isBack />
-          <Text style={styles.title}>Đăng nhập</Text>
+          <AppText style={styles.title}>Đăng nhập</AppText>
           <TouchableOpacity style={styles.ggBtn} onPress={handleGG}>
             <GoogleSvg />
-            <Text style={styles.btnText}>Đăng nhập bằng Gmail</Text>
+            <AppText style={styles.btnText}>Đăng nhập bằng Gmail</AppText>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.ggBtn, styles.fbBtn]} onPress={handleFb}>
             <FacebookSvg />
-            <Text style={styles.btnText}>Đăng nhập bằng Facebook</Text>
+            <AppText style={styles.btnText}>Đăng nhập bằng Facebook</AppText>
           </TouchableOpacity>
 
           <View style={styles.row}>
             <View style={styles.line} />
-            <Text style={styles.orText}>Hoặc</Text>
+            <AppText style={styles.orText}>Hoặc</AppText>
             <View style={styles.line} />
           </View>
 

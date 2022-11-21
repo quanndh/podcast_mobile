@@ -1,9 +1,10 @@
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Platform, Text, TouchableOpacity, View } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
 import { AvatarDefaultSvg, NotiFilledSvg, SearchSvg } from '../../assets/icons';
 import { Colors } from '../../constants/colors';
+import { Storage } from '../../helpers/storage';
 import type { AppTabParams } from '../../navigators/app.navigator';
 import type { RootStackParams } from '../../navigators/root.navigator';
 import AppImage from '../AppImage';
@@ -20,10 +21,10 @@ const AppSearchHeader: React.FC<AppSearchHeaderProps> = () => {
       'https://scontent.fhan17-1.fna.fbcdn.net/v/t1.15752-9/313286831_832078111278194_3134596555107886310_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=ae9488&_nc_ohc=nWngr-RMpt0AX8YIFml&_nc_ht=scontent.fhan17-1.fna&oh=03_AdRoD_Pj4zg-MeZZaK1p21EKsAEhf_Vk_FNR0udBeqEc9A&oe=63948626',
   };
 
-  const handlePressAvatar = () => {
-    const isLogin = false;
+  const handlePressAvatar = async () => {
+    const isLogin = await Storage.get('isLogin');
 
-    if (isLogin) {
+    if (isLogin === 'true') {
       rootNavigation.navigate('Account');
     } else {
       rootNavigation.navigate('Auth');
@@ -54,6 +55,7 @@ const styles = ScaledSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    marginTop: Platform.OS === 'android' ? '8@vs' : 0,
   },
   avatar: {
     height: '22@s',

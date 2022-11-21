@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
 import LinearGradient from 'react-native-linear-gradient';
 import { Colors } from '../../../constants/colors';
@@ -8,6 +8,7 @@ import Space from '../../../components/Space';
 import { createRef } from 'react';
 import type { Modalize } from 'react-native-modalize';
 import SubcribeSheet, { SubcribeOption } from './SubcribeSheet';
+import AppText from '../../../components/AppText';
 interface StatusProps {}
 
 const Status: React.FC<StatusProps> = () => {
@@ -27,31 +28,31 @@ const Status: React.FC<StatusProps> = () => {
       end={{ x: 1, y: 0 }}
       colors={['#F0E4F6', '#F9F3FA', '#EED6E7']}
       style={styles.container}>
-      <Text style={styles.greyText}>Tình trạng gói (Đã đăng ký)</Text>
+      <AppText style={styles.greyText}>Tình trạng gói (Đã đăng ký)</AppText>
       <View style={[styles.row, styles.statusContainer]}>
         <View style={styles.row}>
           <CalendarSvg />
           <Space />
-          <Text style={styles.text}>24/12/2023 (còn 293 ngày)</Text>
+          <AppText style={styles.text}>24/12/2023 (còn 293 ngày)</AppText>
         </View>
         <TouchableOpacity style={styles.row} onPress={handlePressExtend}>
-          <Text style={styles.redText}>Gia hạn gói</Text>
+          <AppText style={styles.redText}>Gia hạn gói</AppText>
           <Space />
           <RedArrowRightSvg />
         </TouchableOpacity>
       </View>
       <View style={styles.row}>
         <View style={styles.row}>
-          <Text style={styles.greyText}>Đã nghe</Text>
+          <AppText style={styles.greyText}>Đã nghe</AppText>
           <Space />
-          <Text style={styles.text}>32</Text>
+          <AppText style={styles.text}>32</AppText>
           <Space size={4} />
           <HeadsetSvg />
         </View>
         <View style={styles.row}>
-          <Text style={styles.greyText}>Đang nghe</Text>
+          <AppText style={styles.greyText}>Đang nghe</AppText>
           <Space />
-          <Text style={styles.text}>32</Text>
+          <AppText style={styles.text}>32</AppText>
           <Space size={4} />
           <PauseSvg />
         </View>

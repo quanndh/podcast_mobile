@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import { scale, ScaledSheet } from 'react-native-size-matters';
 import { FlatGrid } from 'react-native-super-grid';
 import AppSearchHeader from '../../components/AppSearchHeader';
 import AppSelectButton, { Option } from '../../components/AppSelectButton';
+import AppText from '../../components/AppText';
 import Book from '../../components/Book';
 import ListenStatistic from '../../components/ListenStatistic';
 import Space from '../../components/Space';
@@ -77,7 +78,7 @@ const PodcastTab = () => {
             <Space size={16} />
             <AppSelectButton onChange={handleChangeSort} value={sort} title="Sắp xếp theo" options={sortOptions} />
           </View>
-          <Text style={styles.title}>Đề xuất</Text>
+          <AppText style={styles.title}>Đề xuất</AppText>
         </>
       }
       ListFooterComponent={<Space size={112} />}

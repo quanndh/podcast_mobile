@@ -33,3 +33,4 @@ export { default as GoogleSvg } from './google.svg';
 export { default as FacebookSvg } from './facebook.svg';
 export { default as EyeOpenSvg } from './eye_open.svg';
 export { default as EyeCloseSvg } from './eye_close.svg';
+export { default as LogoutSvg } from './log_out.svg';

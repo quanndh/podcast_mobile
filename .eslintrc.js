@@ -4,5 +4,6 @@ module.exports = {
   rules: {
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
+    'react-native/no-inline-styles': 'off',
   },
 };

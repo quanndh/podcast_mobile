@@ -1,10 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
-import { FlatList, Text, View } from 'react-native';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { FlatList, View } from 'react-native';
 import type { ICarouselInstance } from 'react-native-reanimated-carousel';
 import Carousel from 'react-native-reanimated-carousel';
 import { scale, ScaledSheet } from 'react-native-size-matters';
+import AppText from '../../../components/AppText';
 import Chip from '../../../components/Chip';
 import Space from '../../../components/Space';
 import { DEVICE_HEIGHT, DEVICE_WIDTH } from '../../../constants/variables';
@@ -105,7 +105,7 @@ const WeeklyTrending: React.FC<WeeklyTrendingProps> = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Nổi bật trong tuần</Text>
+      <AppText style={styles.title}>Nổi bật trong tuần</AppText>
       <FlatList
         data={trendingChips}
         renderItem={renderChip}

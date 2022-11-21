@@ -1,6 +1,7 @@
 import React from 'react';
-import { FlatList, Text, View } from 'react-native';
+import { FlatList, View } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
+import AppText from '../../../components/AppText';
 import Creator from '../../../components/Creator';
 import Space from '../../../components/Space';
 
@@ -37,7 +38,7 @@ const TopCreator: React.FC<TopCreatorProps> = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Kênh đáng chú ý</Text>
+      <AppText style={styles.title}>Kênh đáng chú ý</AppText>
       <FlatList
         horizontal
         keyExtractor={(_, index) => String(index)}

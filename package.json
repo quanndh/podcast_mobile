@@ -14,6 +14,7 @@
     "apk": "cd android &&./gradlew clean && ./gradlew assembleRelease && cd .."
   },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.17.11",
     "@react-native-clipboard/clipboard": "^1.11.1",
     "@react-native-google-signin/google-signin": "^8.2.1",
     "@react-navigation/bottom-tabs": "^6.4.0",

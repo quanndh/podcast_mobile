@@ -15,6 +15,12 @@
 		6172F2D35A4C3AA820D92908 /* libPods-podcast_mobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6423831EA8574132BED9D8CC /* libPods-podcast_mobile.a */; };
 		7EF68E3733C33B6898317E18 /* libPods-podcast_mobile-podcast_mobileTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE59519B596E51CEFDCCC0 /* libPods-podcast_mobile-podcast_mobileTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		73BAD048DCD8431CB659FB00 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9CA28BDF409647358B22CBBC /* SF-Pro-Display-Bold.otf */; };
+		14F47869FAF64BBFBC143820 /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D153AAB2FD4442509A2C9A2E /* SF-Pro-Display-Light.otf */; };
+		78FDE3B0B04448978739F9EF /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = AC6FF4D38D894437B1B69854 /* SF-Pro-Display-Medium.otf */; };
+		E022BF459D984698A54ECB79 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07BA7217D49D4DD6A54AB2F8 /* SF-Pro-Display-Regular.otf */; };
+		F2F15EF016944BD880F59357 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8829E55FD3B742839980E6C4 /* SF-Pro-Display-Semibold.otf */; };
+		E5821EA305D447F68360E10B /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = C3DEE98CD7A042A29C452DB2 /* SF-Pro-Display-Thin.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +52,12 @@
 		C0A881CF5CF3F2B244570E2A /* Pods-podcast_mobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-podcast_mobile.debug.xcconfig"; path = "Target Support Files/Pods-podcast_mobile/Pods-podcast_mobile.debug.xcconfig"; sourceTree = "<group>"; };
 		D00AAFFCFCFDA5787532823F /* Pods-podcast_mobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-podcast_mobile.release.xcconfig"; path = "Target Support Files/Pods-podcast_mobile/Pods-podcast_mobile.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		9CA28BDF409647358B22CBBC /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; name = "SF-Pro-Display-Bold.otf"; path = "../assets/fonts/SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D153AAB2FD4442509A2C9A2E /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; name = "SF-Pro-Display-Light.otf"; path = "../assets/fonts/SF-Pro-Display-Light.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AC6FF4D38D894437B1B69854 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; name = "SF-Pro-Display-Medium.otf"; path = "../assets/fonts/SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		07BA7217D49D4DD6A54AB2F8 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; name = "SF-Pro-Display-Regular.otf"; path = "../assets/fonts/SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8829E55FD3B742839980E6C4 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; name = "SF-Pro-Display-Semibold.otf"; path = "../assets/fonts/SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C3DEE98CD7A042A29C452DB2 /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; name = "SF-Pro-Display-Thin.otf"; path = "../assets/fonts/SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +137,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				E233CBF5F47BEE60B243DCF8 /* Pods */,
+				42E0AC766DC74486BC7E39C7 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -150,6 +163,20 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		42E0AC766DC74486BC7E39C7 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				9CA28BDF409647358B22CBBC /* SF-Pro-Display-Bold.otf */,
+				D153AAB2FD4442509A2C9A2E /* SF-Pro-Display-Light.otf */,
+				AC6FF4D38D894437B1B69854 /* SF-Pro-Display-Medium.otf */,
+				07BA7217D49D4DD6A54AB2F8 /* SF-Pro-Display-Regular.otf */,
+				8829E55FD3B742839980E6C4 /* SF-Pro-Display-Semibold.otf */,
+				C3DEE98CD7A042A29C452DB2 /* SF-Pro-Display-Thin.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -248,6 +275,12 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				03E1739F2929FB1F0034356F /* GoogleService-Info.plist in Resources */,
+				73BAD048DCD8431CB659FB00 /* SF-Pro-Display-Bold.otf in Resources */,
+				14F47869FAF64BBFBC143820 /* SF-Pro-Display-Light.otf in Resources */,
+				78FDE3B0B04448978739F9EF /* SF-Pro-Display-Medium.otf in Resources */,
+				E022BF459D984698A54ECB79 /* SF-Pro-Display-Regular.otf in Resources */,
+				F2F15EF016944BD880F59357 /* SF-Pro-Display-Semibold.otf in Resources */,
+				E5821EA305D447F68360E10B /* SF-Pro-Display-Thin.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

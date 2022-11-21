@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import { scale, ScaledSheet } from 'react-native-size-matters';
 import AppButton from '../../../components/AppButton';
 import AppHeader from '../../../components/AppHeader';
@@ -8,6 +8,7 @@ import { DefaultContainerStyles } from '../../../constants/styles';
 import OTPInputView from '@twotalltotems/react-native-otp-input';
 import { useNavigation, type NavigationProp } from '@react-navigation/native';
 import type { AuthStackParams } from '../../../navigators/auth.navigation';
+import AppText from '../../../components/AppText';
 
 const OtpScreen = () => {
   const navigation = useNavigation<NavigationProp<AuthStackParams>>();
@@ -27,14 +28,12 @@ const OtpScreen = () => {
   return (
     <View style={styles.container}>
       <AppHeader isBack />
-      <Text style={styles.title}>Xác nhận Email</Text>
-      <Text style={styles.subTitle}>Nhập mã code được gửi đên email của bạn</Text>
+      <AppText style={styles.title}>Xác nhận Email</AppText>
+      <AppText style={styles.subTitle}>Nhập mã code được gửi đên email của bạn</AppText>
       <OTPInputView
         pinCount={6}
         autoFocusOnLoad
-        // eslint-disable-next-line react-native/no-inline-styles
         style={{ width: '100%', height: scale(50), marginBottom: scale(24) }}
-        // eslint-disable-next-line react-native/no-inline-styles
         codeInputFieldStyle={{
           borderWidth: 2,
           borderColor: '#F1F1F1',
@@ -43,7 +42,6 @@ const OtpScreen = () => {
           width: scale(44),
           color: 'black',
         }}
-        // eslint-disable-next-line react-native/no-inline-styles
         codeInputHighlightStyle={{
           borderWidth: 2,
           borderColor: Colors.accent,

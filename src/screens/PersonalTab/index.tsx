@@ -1,8 +1,9 @@
 import React from 'react';
-import { ScrollView, Text, View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
 import { ArrowRighrSvg } from '../../assets/icons';
 import AppSearchHeader from '../../components/AppSearchHeader';
+import AppText from '../../components/AppText';
 import BookRow from '../../components/BookRow';
 import CreatorRow from '../../components/CreatorRow';
 import Space from '../../components/Space';
@@ -68,7 +69,7 @@ const PersonalTab = () => {
       <AppSearchHeader />
       <Space />
       <View style={styles.row}>
-        <Text style={styles.title}>Đang nghe Podcast</Text>
+        <AppText style={styles.title}>Đang nghe Podcast</AppText>
         <Space />
         <ArrowRighrSvg />
       </View>
@@ -79,7 +80,7 @@ const PersonalTab = () => {
       </View>
 
       <View style={styles.row}>
-        <Text style={styles.title}>Đang theo dõi</Text>
+        <AppText style={styles.title}>Đang theo dõi</AppText>
         <Space />
         <ArrowRighrSvg />
       </View>
@@ -90,8 +91,8 @@ const PersonalTab = () => {
       </View>
 
       <View>
-        <Text style={styles.title1}>Đang nghe sách tóm tắt</Text>
-        <Text style={styles.subTitle}>Các creator mà bạn đang theo dõi</Text>
+        <AppText style={styles.title1}>Đang nghe sách tóm tắt</AppText>
+        <AppText style={styles.subTitle}>Các creator mà bạn đang theo dõi</AppText>
       </View>
       <View>
         {creators.map((x, index) => (

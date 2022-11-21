@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
-import { Text, View } from 'react-native';
-import { scale, ScaledSheet } from 'react-native-size-matters';
+import { View } from 'react-native';
+import { ScaledSheet } from 'react-native-size-matters';
 import { FlatGrid } from 'react-native-super-grid';
 import AppSearchHeader from '../../components/AppSearchHeader';
 import AppSelectButton, { Option } from '../../components/AppSelectButton';
-import Book from '../../components/Book';
+import AppText from '../../components/AppText';
 import Creator from '../../components/Creator';
 import ListenStatistic from '../../components/ListenStatistic';
 import Space from '../../components/Space';
 import { DefaultContainerStyles } from '../../constants/styles';
-import { DEVICE_WIDTH } from '../../constants/variables';
-import Status from '../BookTab/components/Status';
 
 const genreOptions: Option[] = [
   { text: 'Tiểu sử & lịch sử', value: 'history' },
@@ -110,7 +108,7 @@ const CreatorTab = () => {
             <Space size={16} />
             <AppSelectButton onChange={handleChangeSort} value={sort} title="Sắp xếp theo" options={sortOptions} />
           </View>
-          <Text style={styles.title}>Đề xuất</Text>
+          <AppText style={styles.title}>Đề xuất</AppText>
         </>
       }
       ListFooterComponent={<Space size={112} />}

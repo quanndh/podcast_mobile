@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
 import AppHeader from '../../../components/AppHeader';
 import FormItem from '../../../components/FormItem';
@@ -9,6 +9,7 @@ import { useForm } from 'react-hook-form';
 import AppButton from '../../../components/AppButton';
 import { useNavigation, type NavigationProp } from '@react-navigation/native';
 import type { AuthStackParams } from '../../../navigators/auth.navigation';
+import AppText from '../../../components/AppText';
 
 interface ForgorPasswordForm {
   email: string;
@@ -35,8 +36,8 @@ const ForgorPasswordScreen = () => {
   return (
     <View style={styles.container}>
       <AppHeader isBack />
-      <Text style={styles.title}>Quên mật khẩu</Text>
-      <Text style={styles.subTitle}>Nhập email của bạn để chúng tôi có thể giúp bạn lấy lại mật khẩu</Text>
+      <AppText style={styles.title}>Quên mật khẩu</AppText>
+      <AppText style={styles.subTitle}>Nhập email của bạn để chúng tôi có thể giúp bạn lấy lại mật khẩu</AppText>
       <FormItem error={errors.email} required control={control} lable="Email" placeholder="Nhập email" name="email" />
       <AppButton title="Xác nhận" primary onPress={handleSubmit(onSubmit)} />
     </View>

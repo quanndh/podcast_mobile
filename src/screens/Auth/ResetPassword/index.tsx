@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
 import AppHeader from '../../../components/AppHeader';
 import { DefaultContainerStyles } from '../../../constants/styles';
@@ -8,6 +8,7 @@ import FormItem from '../../../components/FormItem';
 import AppButton from '../../../components/AppButton';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 import type { AuthStackParams } from '../../../navigators/auth.navigation';
+import AppText from '../../../components/AppText';
 
 interface ResetPasswordForm {
   password: string;
@@ -35,7 +36,7 @@ const ResetPasswordScreen = () => {
   return (
     <View style={styles.container}>
       <AppHeader isBack />
-      <Text style={styles.title}>Nhập mật khẩu mới</Text>
+      <AppText style={styles.title}>Nhập mật khẩu mới</AppText>
       <FormItem
         autoFocus
         isPassword

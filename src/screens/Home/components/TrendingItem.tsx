@@ -1,8 +1,9 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import { scale, ScaledSheet } from 'react-native-size-matters';
 import { PlayCircleSvg } from '../../../assets/icons';
 import AppImage from '../../../components/AppImage';
+import AppText from '../../../components/AppText';
 import Space from '../../../components/Space';
 import { Colors } from '../../../constants/colors';
 import { DEVICE_WIDTH } from '../../../constants/variables';
@@ -21,19 +22,19 @@ const TrendingItem: React.FC<TrendingItemProps> = ({ logo, name, author, duratio
       <AppImage uri={logo} style={styles.logo} />
       <View style={styles.info}>
         <View>
-          <Text style={styles.name}>{name}</Text>
-          <Text style={styles.greyText}>{author}</Text>
+          <AppText style={styles.name}>{name}</AppText>
+          <AppText style={styles.greyText}>{author}</AppText>
         </View>
         <View style={styles.statistic}>
           <View style={styles.duration}>
             <PlayCircleSvg />
             <Space />
-            <Text style={styles.blackText}>{duration}</Text>
+            <AppText style={styles.blackText}>{duration}</AppText>
           </View>
           <View style={styles.duration}>
-            <Text style={styles.greyText}>Lượt nghe:</Text>
-            <Text> </Text>
-            <Text style={styles.blackText}>{view}</Text>
+            <AppText style={styles.greyText}>Lượt nghe:</AppText>
+            <AppText> </AppText>
+            <AppText style={styles.blackText}>{view}</AppText>
           </View>
         </View>
       </View>
