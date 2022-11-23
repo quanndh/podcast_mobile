@@ -8,13 +8,15 @@ interface BottomSheetProps {
   children: React.ReactNode;
   snapPoint?: number;
   adjustToContentHeight?: boolean;
+  onClose?: () => void;
 }
 
 const BottomSheet = React.forwardRef<Modalize, BottomSheetProps>(
-  ({ children, snapPoint, adjustToContentHeight = false }, ref) => {
+  ({ children, snapPoint, adjustToContentHeight = false, onClose }, ref) => {
     return (
       <Portal>
         <Modalize
+          onClose={onClose}
           snapPoint={snapPoint ?? DEVICE_HEIGHT / 2}
           adjustToContentHeight={adjustToContentHeight}
           ref={ref}

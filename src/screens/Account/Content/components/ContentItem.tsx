@@ -9,6 +9,7 @@ import AppImage from '../../../../components/AppImage';
 import Space from '../../../../components/Space';
 
 interface ContentItemProps {
+  id: number;
   thumb: string;
   name: string;
   desc: string;
@@ -18,9 +19,11 @@ interface ContentItemProps {
   like: number;
   comment: number;
   view: number;
+  onOpenMenu: (id: number) => void;
 }
 
 const ContentItem: React.FC<ContentItemProps> = ({
+  id,
   thumb,
   name,
   desc,
@@ -30,6 +33,7 @@ const ContentItem: React.FC<ContentItemProps> = ({
   like,
   comment,
   view,
+  onOpenMenu,
 }) => {
   const [collapse, setCollapse] = useState(true);
 
@@ -44,7 +48,9 @@ const ContentItem: React.FC<ContentItemProps> = ({
         <View style={styles.infoContainer}>
           <View style={styles.rowInfo}>
             <AppText style={styles.name}>{name}</AppText>
-            <DotsSvg />
+            <TouchableOpacity onPress={() => onOpenMenu(id)}>
+              <DotsSvg />
+            </TouchableOpacity>
           </View>
           <View style={styles.rowInfo}>
             <AppText style={styles.desc}>{desc}</AppText>
