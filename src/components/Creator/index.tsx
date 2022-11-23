@@ -22,7 +22,7 @@ const Creator: React.FC<CreatorProps> = ({ name, avatar, follower, size = 'small
       {avatar ? (
         <AppImage uri={avatar} style={styles.avatar} />
       ) : (
-        <AvatarDefaultSvg height={scale(64)} width={scale(64)} />
+        <AvatarDefaultSvg height={scale(size === 'small' ? 64 : 140)} width={scale(size === 'small' ? 64 : 140)} />
       )}
       <View style={styles.row}>
         <Text style={styles.name}>{name}</Text>
@@ -48,9 +48,9 @@ const styleFn = (size: 'small' | 'large') =>
       alignItems: 'center',
     },
     avatar: {
-      height: size === 'small' ? '64@s' : '80@s',
-      width: size === 'small' ? '64@s' : '80@s',
-      borderRadius: size === 'small' ? '64@s' : '80@s',
+      height: size === 'small' ? '64@s' : '140@s',
+      width: size === 'small' ? '64@s' : '140@s',
+      borderRadius: size === 'small' ? '64@s' : '104.5@s',
     },
     infoContainer: {
       flexDirection: 'row',

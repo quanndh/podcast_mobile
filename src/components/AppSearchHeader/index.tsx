@@ -24,7 +24,7 @@ const AppSearchHeader: React.FC<AppSearchHeaderProps> = () => {
   const handlePressAvatar = async () => {
     const isLogin = await Storage.get('isLogin');
 
-    if (isLogin === 'true') {
+    if (true) {
       rootNavigation.navigate('Account');
     } else {
       rootNavigation.navigate('Auth');

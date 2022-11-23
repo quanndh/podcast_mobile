@@ -37,3 +37,4 @@ export { default as LogoutSvg } from './log_out.svg';
 export { default as DotsSvg } from './dots.svg';
 export { default as RedCirclePlusSvg } from './red_circle_plus.svg';
 export { default as DeleteSvg } from './delete.svg';
+export { default as RedArrowUpSvg } from './red_arrow_up.svg';

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
-import { ScaledSheet } from 'react-native-size-matters';
+import { scale, ScaledSheet } from 'react-native-size-matters';
 import { FlatGrid } from 'react-native-super-grid';
 import AppSearchHeader from '../../components/AppSearchHeader';
 import AppSelectButton, { Option } from '../../components/AppSelectButton';
@@ -9,6 +9,7 @@ import Creator from '../../components/Creator';
 import ListenStatistic from '../../components/ListenStatistic';
 import Space from '../../components/Space';
 import { DefaultContainerStyles } from '../../constants/styles';
+import { DEVICE_WIDTH } from '../../constants/variables';
 
 const genreOptions: Option[] = [
   { text: 'Tiểu sử & lịch sử', value: 'history' },
@@ -112,6 +113,7 @@ const CreatorTab = () => {
         </>
       }
       ListFooterComponent={<Space size={112} />}
+      itemDimension={scale(DEVICE_WIDTH / 2) - 110}
       data={creators}
       renderItem={renderItem}
       keyExtractor={(item, index) => String(index + Math.random() * 1000)}
