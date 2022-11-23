@@ -43,23 +43,22 @@ const ContentItem: React.FC<ContentItemProps> = ({
 
   return (
     <View style={styles.container}>
-      <View style={styles.row}>
+      <TouchableOpacity style={styles.row} onPress={handleToggle}>
         <AppImage uri={thumb} style={styles.thumb} />
         <View style={styles.infoContainer}>
           <View style={styles.rowInfo}>
             <AppText style={styles.name}>{name}</AppText>
-            <TouchableOpacity onPress={() => onOpenMenu(id)}>
+            <TouchableOpacity hitSlop={{ top: 10, left: 10, bottom: 10, right: 10 }} onPress={() => onOpenMenu(id)}>
               <DotsSvg />
             </TouchableOpacity>
           </View>
           <View style={styles.rowInfo}>
             <AppText style={styles.desc}>{desc}</AppText>
-            <TouchableOpacity onPress={handleToggle}>
-              {collapse ? <ArrowDownSvg /> : <RedArrowUpSvg />}
-            </TouchableOpacity>
+
+            {collapse ? <ArrowDownSvg /> : <RedArrowUpSvg />}
           </View>
         </View>
-      </View>
+      </TouchableOpacity>
       <Collapsible collapsed={collapse}>
         <View style={styles.statisticContainer}>
           <View style={styles.statisticRow}>
