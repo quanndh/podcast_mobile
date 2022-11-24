@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, TextProps } from 'react-native';
+import { Colors } from '../../constants/colors';
 
 interface AppTextProps extends TextProps {}
 
@@ -17,6 +18,7 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     lineHeight: 17,
     fontFamily: 'SF Pro Display',
+    color: Colors.black,
   },
 });
 
