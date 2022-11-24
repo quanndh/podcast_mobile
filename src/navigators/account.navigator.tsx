@@ -6,6 +6,7 @@ import EditProfileScreen from '../screens/Account/EditProfile';
 import MemberScreen from '../screens/Account/Member';
 import ProfileScreen from '../screens/Account/Profile';
 import TransactionScreen from '../screens/Account/Transaction';
+import WalletScreen from '../screens/Account/Wallet';
 
 export type AccountStackParams = {
   AccountScreen: undefined;
@@ -31,6 +32,7 @@ const AccountStackNavigator = (props: Partial<AccountStackNavigatorProps>) => {
       <Stack.Screen name="TransactionScreen" component={TransactionScreen} />
       <Stack.Screen name="MemberScreen" component={MemberScreen} />
       <Stack.Screen name="ContentScreen" component={ContentScreen} />
+      <Stack.Screen name="WalletScreen" component={WalletScreen} />
     </Stack.Navigator>
   );
 };

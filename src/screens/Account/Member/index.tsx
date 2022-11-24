@@ -72,63 +72,64 @@ const MemberScreen = () => {
   const handleAddBeneift = () => {};
 
   return (
-    <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-      <AppHeader isBack title="Hội Viên Kênh" />
-      <View style={styles.sectionContainer}>
-        <View style={styles.row}>
-          <AppText style={styles.title}>Tùy chỉnh phí</AppText>
-          <AppButton title="Chỉnh sửa" style={{ marginVertical: 0 }} isText onPress={handleUpdateFee} />
-        </View>
-        {Helpers.groupArr(fees, 2).map((x, index) => (
-          <View style={styles.row} key={index}>
-            {x.map((fee, index1) => (
-              <View key={String(index + index1)} style={styles.feeContainer}>
-                <AppText style={styles.feePrice}>{fee.price}</AppText>
-                <AppText style={styles.greyText}>{fee.duration}</AppText>
+    <FlatList
+      style={styles.container}
+      showsVerticalScrollIndicator={false}
+      ListHeaderComponent={
+        <View>
+          <AppHeader isBack title="Hội Viên Kênh" />
+          <View style={styles.sectionContainer}>
+            <View style={styles.row}>
+              <AppText style={styles.title}>Tùy chỉnh phí</AppText>
+              <AppButton title="Chỉnh sửa" style={{ marginVertical: 0 }} isText onPress={handleUpdateFee} />
+            </View>
+            {Helpers.groupArr(fees, 2).map((x, index) => (
+              <View style={styles.row} key={index}>
+                {x.map((fee, index1) => (
+                  <View key={String(index + index1)} style={styles.feeContainer}>
+                    <AppText style={styles.feePrice}>{fee.price}</AppText>
+                    <AppText style={styles.greyText}>{fee.duration}</AppText>
+                  </View>
+                ))}
               </View>
             ))}
           </View>
-        ))}
-      </View>
 
-      <View style={styles.sectionContainer}>
-        <View style={[styles.row, { justifyContent: 'center' }]}>
-          <AppText style={styles.title}>Ưu đãi dành cho hội viên</AppText>
-        </View>
-
-        {benefits.map((x, index1) => (
-          <View key={String(index1)} style={[styles.row, styles.benefitContainer]}>
-            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-              <DoubleArrowRightSvg />
-              <Space />
-              <AppText>{x}</AppText>
-            </View>
-            <DotsSvg />
-          </View>
-        ))}
-
-        <AppButton
-          style={{ alignSelf: 'center' }}
-          isText
-          icon={<RedCirclePlusSvg />}
-          title="Thêm ưu đãi"
-          onPress={handleAddBeneift}
-        />
-      </View>
-      <View style={styles.sectionContainer}>
-        <FlatList
-          style={{ height: DEVICE_HEIGHT / 2 }}
-          showsVerticalScrollIndicator={false}
-          ListHeaderComponent={
-            <View style={[styles.row, { justifyContent: 'flex-start' }]}>
+          <View style={styles.sectionContainer}>
+            <View style={[styles.row, { justifyContent: 'center' }]}>
               <AppText style={styles.title}>Ưu đãi dành cho hội viên</AppText>
-              <Space />
-              <AppText style={styles.greyText}>(123)</AppText>
             </View>
-          }
-          data={members}
-          renderItem={({ item }) => (
-            <View style={[styles.row, { marginBottom: scale(8) }]}>
+            {benefits.map((x, index1) => (
+              <View key={String(index1)} style={[styles.row, styles.benefitContainer]}>
+                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                  <DoubleArrowRightSvg />
+                  <Space />
+                  <AppText>{x}</AppText>
+                </View>
+                <DotsSvg />
+              </View>
+            ))}
+            <AppButton
+              style={{ alignSelf: 'center' }}
+              isText
+              icon={<RedCirclePlusSvg />}
+              title="Thêm ưu đãi"
+              onPress={handleAddBeneift}
+            />
+          </View>
+        </View>
+      }
+      data={members}
+      renderItem={({ item }) => <View />}
+      ListFooterComponent={
+        <View style={[styles.sectionContainer, { marginBottom: 100 }]}>
+          <View style={[styles.row, { justifyContent: 'flex-start' }]}>
+            <AppText style={styles.title}>Ưu đãi dành cho hội viên</AppText>
+            <Space />
+            <AppText style={styles.greyText}>(123)</AppText>
+          </View>
+          {members.map((item, index) => (
+            <View style={[styles.row, { marginBottom: scale(8) }]} key={index}>
               <View style={styles.memberInfo}>
                 {item.avatar ? <AppImage uri={item.avatar} style={styles.avatar} /> : <AvatarDefaultSvg />}
                 <View style={{ justifyContent: 'space-between', flex: 1 }}>
@@ -138,10 +139,10 @@ const MemberScreen = () => {
                 <DeleteSvg />
               </View>
             </View>
-          )}
-        />
-      </View>
-    </ScrollView>
+          ))}
+        </View>
+      }
+    />
   );
 };
 

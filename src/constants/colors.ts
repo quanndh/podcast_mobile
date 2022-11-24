@@ -9,4 +9,5 @@ export const Colors = {
   facebook: '#1877F2',
   transactionBg: '#F8F8F8',
   green: 'rgba(76, 171, 139, 0.2);',
+  success: '#26BB89',
 };
