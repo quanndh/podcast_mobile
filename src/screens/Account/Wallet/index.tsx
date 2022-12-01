@@ -9,7 +9,7 @@ import AppText from '../../../components/AppText';
 import Chip from '../../../components/Chip';
 import Space from '../../../components/Space';
 import { Colors } from '../../../constants/colors';
-import { DefaultContainerStyles } from '../../../constants/styles';
+import { DefaultContainerStyles, ShadowStyle } from '../../../constants/styles';
 import TransactionItem from './components/TransactionItem';
 
 const transactions: any = [
@@ -122,14 +122,7 @@ const styles = ScaledSheet.create({
   balanceContainer: {
     padding: '16@s',
     backgroundColor: Colors.white,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 1,
-      height: 4,
-    },
-    shadowOpacity: 0.2,
-    shadowRadius: 4,
-    elevation: 3,
+    ...ShadowStyle,
     borderRadius: '16@s',
     marginVertical: '16@vs',
   },

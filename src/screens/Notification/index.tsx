@@ -7,6 +7,7 @@ import NotificationItem from '../../components/NotificationItem';
 import Space from '../../components/Space';
 import { Colors } from '../../constants/colors';
 import { DefaultContainerStyles } from '../../constants/styles';
+import useTrackingScreen from '../../hooks/useTrackingScreen';
 
 const noti: any = [
   {
@@ -40,6 +41,8 @@ const noti: any = [
 ];
 
 const NotificationScreen = () => {
+  useTrackingScreen();
+
   const renderItem = ({ item }: any) => {
     return <NotificationItem {...item} />;
   };

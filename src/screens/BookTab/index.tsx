@@ -11,6 +11,7 @@ import Status from './components/Status';
 import { FlatGrid } from 'react-native-super-grid';
 import { DEVICE_WIDTH } from '../../constants/variables';
 import AppText from '../../components/AppText';
+import useTrackingScreen from '../../hooks/useTrackingScreen';
 
 const genreOptions: Option[] = [
   { text: 'Tiểu sử & lịch sử', value: 'history' },
@@ -49,6 +50,8 @@ const recommend = [
 ];
 
 const BookTab = () => {
+  useTrackingScreen();
+
   const [genre, setGenre] = useState<string>();
   const [sort, setSort] = useState<string>();
 

@@ -30,7 +30,6 @@ const ResetPasswordScreen = () => {
   });
 
   const onSubmit = (data: ResetPasswordForm) => {
-    console.log(data);
     navigation.navigate('LoginScreen');
   };
   return (

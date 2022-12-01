@@ -3,11 +3,11 @@ import { forwardRef } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import type { Modalize } from 'react-native-modalize';
 import { ScaledSheet } from 'react-native-size-matters';
-import { CalendarGreySvg, DoubleArrowRightSvg } from '../../../assets/icons';
-import AppText from '../../../components/AppText';
-import BottomSheet from '../../../components/BottomSheet';
-import Space from '../../../components/Space';
-import { Colors } from '../../../constants/colors';
+import { CalendarGreySvg, DoubleArrowRightSvg } from '../../assets/icons';
+import { Colors } from '../../constants/colors';
+import AppText from '../AppText';
+import BottomSheet from '../BottomSheet';
+import Space from '../Space';
 
 export type SubcribeOption = {
   name: string;
@@ -19,10 +19,11 @@ interface SubcribeSheetProps {
   benefits: string[];
   type: 'extend' | 'new';
   handleChoose: (option: SubcribeOption) => void;
+  title?: string;
 }
 
 const SubcribeSheet = forwardRef<Modalize, SubcribeSheetProps>(
-  ({ type, benefits, subcribeOptions, handleChoose }, ref) => {
+  ({ type, benefits, subcribeOptions, handleChoose, title }, ref) => {
     const handleSubcribe = (option: SubcribeOption) => {
       handleChoose(option);
     };
@@ -30,7 +31,11 @@ const SubcribeSheet = forwardRef<Modalize, SubcribeSheetProps>(
     return (
       <BottomSheet ref={ref} adjustToContentHeight>
         <View style={styles.container}>
-          <AppText style={styles.title}>{type === 'new' ? 'Đăng ký hội viên kênh' : 'Gia hạn sách tóm tắt'}</AppText>
+          {title ? (
+            <AppText style={styles.title}>{title}</AppText>
+          ) : (
+            <AppText style={styles.title}>{type === 'new' ? 'Đăng ký hội viên kênh' : 'Gia hạn sách tóm tắt'}</AppText>
+          )}
           {type === 'extend' && (
             <View style={[styles.row, { justifyContent: 'center' }]}>
               <CalendarGreySvg color={Colors.grey} />

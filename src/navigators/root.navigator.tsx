@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { AppTabNavigator } from './app.navigator';
 import AuthStackNavigator from './auth.navigation';
 import AccountStackNavigator from './account.navigator';
+import { useRoute } from '@react-navigation/native';
 
 export type RootStackParams = {
   Auth: undefined;

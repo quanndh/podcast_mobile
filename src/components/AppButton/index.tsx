@@ -1,9 +1,7 @@
-import React, { ReactElement, ReactNode } from 'react';
-import { StyleProp, Text, TouchableOpacity, View, ViewStyle } from 'react-native';
+import React, { ReactElement } from 'react';
+import { StyleProp, Text, TouchableOpacity, ViewStyle } from 'react-native';
 import { scale, ScaledSheet } from 'react-native-size-matters';
-import { LogoutSvg } from '../../assets/icons';
 import { Colors } from '../../constants/colors';
-import Space from '../Space';
 
 interface AppButtonProps {
   isText?: boolean;
@@ -12,19 +10,30 @@ interface AppButtonProps {
   onPress: () => void;
   style?: StyleProp<ViewStyle>;
   icon?: ReactElement;
+  color?: string;
+  transparent?: boolean;
 }
 
-const AppButton: React.FC<AppButtonProps> = ({ isText = false, title, primary = false, onPress, style = {}, icon }) => {
-  const styles = styleFn(primary, isText);
+const AppButton: React.FC<AppButtonProps> = ({
+  isText = false,
+  title,
+  primary = false,
+  onPress,
+  style = {},
+  icon,
+  color = 'accent',
+  transparent = false,
+}) => {
+  const styles = styleFn(primary, isText, color, transparent);
   return (
     <TouchableOpacity onPress={onPress} style={isText ? [styles.textContainer, style] : [styles.container, style]}>
       {icon ? icon : null}
-      <Text style={[styles.text, style, icon && { marginLeft: scale(isText ? 8 : 16) }]}>{title}</Text>
+      <Text style={[styles.text, style, icon && { marginLeft: scale(isText ? 4 : 8) }]}>{title}</Text>
     </TouchableOpacity>
   );
 };
 
-const styleFn = (primary: boolean, isText: boolean) =>
+const styleFn = (primary: boolean, isText: boolean, color: string, transparent: boolean) =>
   ScaledSheet.create({
     container: {
       flexDirection: 'row',
@@ -32,9 +41,9 @@ const styleFn = (primary: boolean, isText: boolean) =>
       alignItems: 'center',
       marginVertical: '8@vs',
       paddingVertical: '12@vs',
-      backgroundColor: primary ? Colors.accent : Colors.white,
+      backgroundColor: transparent ? 'transparent' : primary ? Colors.accent : Colors.white,
       borderWidth: 1.5,
-      borderColor: Colors.accent,
+      borderColor: Colors[color],
       borderRadius: '30@s',
     },
     textContainer: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center' },
@@ -47,8 +56,8 @@ const styleFn = (primary: boolean, isText: boolean) =>
           marginVertical: '8@vs',
         }
       : {
-          color: primary ? Colors.white : Colors.accent,
-          fontWeight: '500',
+          color: primary ? Colors.white : Colors[color],
+          fontWeight: '600',
         },
   });
 

@@ -6,6 +6,7 @@ import { StatusBar } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Host } from 'react-native-portalize';
 import { Storage } from './src/helpers/storage';
+import { RecoilRoot } from 'recoil';
 
 const App = () => {
   const init = async () => {
@@ -20,7 +21,9 @@ const App = () => {
       <SafeAreaProvider>
         <Host>
           <NavigationContainer>
-            <RootApp />
+            <RecoilRoot>
+              <RootApp />
+            </RecoilRoot>
           </NavigationContainer>
         </Host>
       </SafeAreaProvider>

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Platform, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { KeyboardTypeOptions, Platform, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { scale, ScaledSheet } from 'react-native-size-matters';
-import { EyeCloseSvg, EyeOpenSvg } from '../../assets/icons';
+import { ArrowDownSvg, ArrowUpSvg, EyeCloseSvg, EyeOpenSvg } from '../../assets/icons';
 import { Colors } from '../../constants/colors';
 import { Controller, Control, FieldError } from 'react-hook-form';
+import Space from '../Space';
+import AppText from '../AppText';
 
 interface FormItemProps {
   lable?: string;
@@ -14,6 +16,9 @@ interface FormItemProps {
   required?: boolean;
   error?: FieldError;
   autoFocus?: boolean;
+  type?: KeyboardTypeOptions;
+  helperText?: string;
+  textarea?: boolean;
 }
 
 const FormItem: React.FC<FormItemProps> = ({
@@ -25,8 +30,12 @@ const FormItem: React.FC<FormItemProps> = ({
   required = false,
   error,
   autoFocus = false,
+  type = 'default',
+  helperText,
+  textarea = false,
 }) => {
   const [show, setShow] = useState(false);
+  const [length, setLength] = useState(0);
 
   const renderEye = () => {
     return (
@@ -36,16 +45,43 @@ const FormItem: React.FC<FormItemProps> = ({
     );
   };
 
+  const renderArrows = (onChange: any, value: string) => {
+    return (
+      <View>
+        <TouchableOpacity onPress={() => onChange(String(Number(value) + 1))}>
+          <ArrowUpSvg height={scale(8)} />
+        </TouchableOpacity>
+        <Space size={4} />
+        <TouchableOpacity onPress={() => value !== '1' && onChange(String(Number(value) - 1))}>
+          <ArrowDownSvg height={scale(8)} />
+        </TouchableOpacity>
+      </View>
+    );
+  };
+
   return (
     <View style={styles.container}>
-      {lable && <Text style={styles.lable}>{lable}</Text>}
+      <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+        {lable && <Text style={styles.lable}>{lable}</Text>}
+        {textarea && (
+          <AppText style={styles.textCount}>
+            <AppText>{length}</AppText>/240
+          </AppText>
+        )}
+      </View>
       <Controller
         control={control}
         name={name}
         rules={{ required: required ? 'This field is required' : false }}
         render={({ field: { onChange, onBlur, value } }) => (
-          <View style={[styles.inputContainer, error ? styles.inputContainerErr : {}]}>
+          <View
+            style={[
+              styles.inputContainer,
+              error ? styles.inputContainerErr : {},
+              textarea && { height: scale(100), alignItems: 'flex-start' },
+            ]}>
             <TextInput
+              keyboardType={type}
               autoFocus={autoFocus}
               secureTextEntry={isPassword && !show}
               placeholderTextColor={Colors.grey}
@@ -53,12 +89,20 @@ const FormItem: React.FC<FormItemProps> = ({
               placeholder={placeholder}
               value={value}
               onBlur={onBlur}
-              onChangeText={onChange}
+              onChangeText={(text) => {
+                onChange(text);
+                setLength(text.length);
+              }}
+              numberOfLines={3}
+              multiline={textarea}
+              maxLength={240}
             />
             {isPassword && renderEye()}
+            {type === 'numeric' && renderArrows(onChange, value)}
           </View>
         )}
       />
+      {helperText && <Text style={styles.helperText}>{helperText}</Text>}
       {error && <Text style={styles.error}>{error.message}</Text>}
     </View>
   );
@@ -70,7 +114,7 @@ const styles = ScaledSheet.create({
   },
   lable: {
     fontWeight: '500',
-    marginBottom: '12@vs',
+    marginBottom: '8@vs',
   },
   inputContainer: {
     borderWidth: 1,
@@ -87,13 +131,24 @@ const styles = ScaledSheet.create({
   },
   input: {
     flex: 1,
-    marginRight: '8@s',
+    marginRight: '16@s',
   },
   error: {
     fontWeight: '500',
     marginBottom: '12@vs',
     color: Colors.red,
     marginTop: '2@vs',
+  },
+  helperText: {
+    fontWeight: '300',
+    color: Colors.grey,
+    fontStyle: 'italic',
+    marginTop: '2@vs',
+  },
+  textCount: {
+    marginBottom: '8@vs',
+    fontWeight: '500',
+    color: Colors.grey,
   },
 });
 

@@ -20,10 +20,13 @@ import { DEVICE_WIDTH } from '../../constants/variables';
 import AppImage from '../AppImage';
 import Space from '../Space';
 import ProgressLine from '../ProgressLine';
+import { useRecoilValue } from 'recoil';
+import { Atoms } from '../../recoil/atoms';
 
 let interval: NodeJS.Timer;
 
 const BottomTabBar = ({ state, descriptors, navigation }: any) => {
+  const isListenScreen = useRecoilValue(Atoms.isListenScreen);
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -38,6 +41,7 @@ const BottomTabBar = ({ state, descriptors, navigation }: any) => {
     name: 'I love your smile',
     logo: 'https://scontent.fhan17-1.fna.fbcdn.net/v/t1.15752-9/313286831_832078111278194_3134596555107886310_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=ae9488&_nc_ohc=nWngr-RMpt0AX8YIFml&_nc_ht=scontent.fhan17-1.fna&oh=03_AdRoD_Pj4zg-MeZZaK1p21EKsAEhf_Vk_FNR0udBeqEc9A&oe=63948626',
     author: 'Binz',
+    type: 'book',
   };
 
   const focusedOptions = descriptors[state.routes[state.index].key].options;
@@ -107,8 +111,8 @@ const BottomTabBar = ({ state, descriptors, navigation }: any) => {
 
   return (
     <View style={[styles.container]}>
-      {currentBook !== null && (
-        <View>
+      {currentBook !== null && !isListenScreen && (
+        <TouchableOpacity onPress={() => navigation.navigate('ListenScreen', { type: currentBook.type })}>
           <View style={styles.playInfoContainer}>
             <View style={styles.bookInfo}>
               <AppImage uri={currentBook.logo} style={styles.bookLogo} />
@@ -125,7 +129,7 @@ const BottomTabBar = ({ state, descriptors, navigation }: any) => {
           </View>
 
           <ProgressLine progress={progress} />
-        </View>
+        </TouchableOpacity>
       )}
       <View style={styles.wrap}>
         {state.routes.map((route: any, index: number) => {

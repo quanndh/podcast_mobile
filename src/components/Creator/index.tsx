@@ -1,8 +1,10 @@
+import { NavigationProp, useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { scale, ScaledSheet } from 'react-native-size-matters';
 import { AvatarDefaultSvg, StarActiveSvg } from '../../assets/icons';
 import { Colors } from '../../constants/colors';
+import type { AppTabParams } from '../../navigators/app.navigator';
 import AppImage from '../AppImage';
 import Space from '../Space';
 
@@ -15,10 +17,15 @@ interface CreatorProps {
 }
 
 const Creator: React.FC<CreatorProps> = ({ name, avatar, follower, size = 'small', isStar = false }) => {
+  const navigation = useNavigation<NavigationProp<AppTabParams>>();
   const styles = styleFn(size);
 
+  const handlePress = () => {
+    navigation.navigate('CreatorDetail', { id: '1' });
+  };
+
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={handlePress}>
       {avatar ? (
         <AppImage uri={avatar} style={styles.avatar} />
       ) : (

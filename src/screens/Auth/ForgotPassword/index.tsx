@@ -29,7 +29,6 @@ const ForgorPasswordScreen = () => {
   });
 
   const onSubmit = (data: ForgorPasswordForm) => {
-    console.log(data);
     navigation.navigate('OtpScreen');
   };
 

@@ -137,7 +137,9 @@ const WeeklyTrending: React.FC<WeeklyTrendingProps> = () => {
 };
 
 const styles = ScaledSheet.create({
-  container: {},
+  container: {
+    marginTop: '16@vs',
+  },
   title: {
     fontSize: 18,
     lineHeight: 21,

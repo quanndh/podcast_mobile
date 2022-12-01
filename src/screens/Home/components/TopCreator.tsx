@@ -40,6 +40,7 @@ const TopCreator: React.FC<TopCreatorProps> = () => {
     <View style={styles.container}>
       <AppText style={styles.title}>Kênh đáng chú ý</AppText>
       <FlatList
+        showsHorizontalScrollIndicator={false}
         horizontal
         keyExtractor={(_, index) => String(index)}
         ItemSeparatorComponent={() => <Space size={14} />}

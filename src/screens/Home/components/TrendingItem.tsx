@@ -1,5 +1,6 @@
+import { NavigationProp, useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 import { scale, ScaledSheet } from 'react-native-size-matters';
 import { PlayCircleSvg } from '../../../assets/icons';
 import AppImage from '../../../components/AppImage';
@@ -7,6 +8,7 @@ import AppText from '../../../components/AppText';
 import Space from '../../../components/Space';
 import { Colors } from '../../../constants/colors';
 import { DEVICE_WIDTH } from '../../../constants/variables';
+import type { AppTabParams } from '../../../navigators/app.navigator';
 
 interface TrendingItemProps {
   logo: string;
@@ -17,8 +19,14 @@ interface TrendingItemProps {
 }
 
 const TrendingItem: React.FC<TrendingItemProps> = ({ logo, name, author, duration, view }) => {
+  const navigation = useNavigation<NavigationProp<AppTabParams>>();
+
+  const handlePress = () => {
+    navigation.navigate('ListenScreen', { type: 'podcast' });
+  };
+
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={handlePress}>
       <AppImage uri={logo} style={styles.logo} />
       <View style={styles.info}>
         <View>
@@ -38,7 +46,7 @@ const TrendingItem: React.FC<TrendingItemProps> = ({ logo, name, author, duratio
           </View>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

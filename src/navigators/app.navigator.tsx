@@ -7,6 +7,8 @@ import PodcastTab from '../screens/PodcastTab';
 import CreatorTab from '../screens/CreatorTab';
 import NotificationScreen from '../screens/Notification';
 import PersonalTab from '../screens/PersonalTab';
+import CreatorDetail from '../screens/CreatorDetail';
+import ListenScreen from '../screens/ListenScreen';
 
 export type AppTabParams = {
   HomeTab: undefined;
@@ -15,6 +17,8 @@ export type AppTabParams = {
   CreatorTab: undefined;
   PersonalTab: undefined;
   NotificationTab: undefined;
+  CreatorDetail: { id: string };
+  ListenScreen: { type: 'podcast' | 'book' };
 };
 
 const Tab = createBottomTabNavigator<AppTabParams>();
@@ -33,6 +37,8 @@ export const AppTabNavigator = () => {
       <Tab.Screen name="CreatorTab" component={CreatorTab} />
       <Tab.Screen name="PersonalTab" component={PersonalTab} />
       <Tab.Screen name="NotificationTab" component={NotificationScreen} />
+      <Tab.Screen name="CreatorDetail" component={CreatorDetail} />
+      <Tab.Screen name="ListenScreen" component={ListenScreen} />
     </Tab.Navigator>
   );
 };

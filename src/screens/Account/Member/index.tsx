@@ -8,7 +8,7 @@ import AppImage from '../../../components/AppImage';
 import AppText from '../../../components/AppText';
 import Space from '../../../components/Space';
 import { Colors } from '../../../constants/colors';
-import { DefaultContainerStyles } from '../../../constants/styles';
+import { DefaultContainerStyles, ShadowStyle } from '../../../constants/styles';
 import { DEVICE_HEIGHT } from '../../../constants/variables';
 import { Helpers } from '../../../helpers';
 
@@ -153,16 +153,9 @@ const styles = ScaledSheet.create({
   sectionContainer: {
     padding: '16@s',
     backgroundColor: Colors.white,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 3.84,
-    elevation: 5,
     borderRadius: '16@s',
     marginTop: '16@vs',
+    ...ShadowStyle,
   },
   row: {
     flexDirection: 'row',

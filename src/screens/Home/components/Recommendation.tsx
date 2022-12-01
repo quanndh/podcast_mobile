@@ -5,19 +5,21 @@ import AppText from '../../../components/AppText';
 import Book from '../../../components/Book';
 import Space from '../../../components/Space';
 
-interface RecommendationProps {
+export interface RecommendationProps {
   topic: string;
   data: Record<string, string>[];
+  type: 'podcast' | 'book';
 }
 
-const Recommendation: React.FC<RecommendationProps> = ({ topic, data }) => {
-  const renderItem = ({ item }: any) => <Book {...item} />;
+const Recommendation: React.FC<RecommendationProps> = ({ topic, data, type }) => {
+  const renderItem = ({ item }: any) => <Book {...item} type={type} />;
 
   return (
     <View style={styles.container}>
       <AppText style={styles.title}>{topic}</AppText>
       <FlatList
         horizontal
+        showsHorizontalScrollIndicator={false}
         keyExtractor={(_, index) => String(index) + topic}
         ItemSeparatorComponent={() => <Space size={16} />}
         data={data}

@@ -1,8 +1,10 @@
+import { useNavigation, type NavigationProp } from '@react-navigation/native';
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 import { scale, ScaledSheet } from 'react-native-size-matters';
 import { AvatarDefaultSvg, StarActiveSvg } from '../../assets/icons';
 import { Colors } from '../../constants/colors';
+import type { AppTabParams } from '../../navigators/app.navigator';
 import AppImage from '../AppImage';
 
 interface CreatorRowProps {
@@ -13,8 +15,13 @@ interface CreatorRowProps {
 }
 
 const CreatorRow: React.FC<CreatorRowProps> = ({ name, avatar, role, isStar = false }) => {
+  const navigation = useNavigation<NavigationProp<AppTabParams>>();
+
+  const handlePress = () => {
+    navigation.navigate('CreatorDetail', { id: '1' });
+  };
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={handlePress}>
       {avatar ? (
         <AppImage uri={avatar} style={styles.logo} />
       ) : (
@@ -31,7 +38,7 @@ const CreatorRow: React.FC<CreatorRowProps> = ({ name, avatar, role, isStar = fa
           <StarActiveSvg />
         </View>
       )}
-    </View>
+    </TouchableOpacity>
   );
 };
 

@@ -10,7 +10,7 @@ import ListenStatistic from '../../components/ListenStatistic';
 import Space from '../../components/Space';
 import { DefaultContainerStyles } from '../../constants/styles';
 import { DEVICE_WIDTH } from '../../constants/variables';
-import Status from '../BookTab/components/Status';
+import useTrackingScreen from '../../hooks/useTrackingScreen';
 
 const genreOptions: Option[] = [
   { text: 'Tiểu sử & lịch sử', value: 'history' },
@@ -49,6 +49,7 @@ const recommend = [
 ];
 
 const PodcastTab = () => {
+  useTrackingScreen();
   const [genre, setGenre] = useState<string>();
   const [sort, setSort] = useState<string>();
 

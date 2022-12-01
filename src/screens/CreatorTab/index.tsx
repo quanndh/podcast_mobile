@@ -10,6 +10,7 @@ import ListenStatistic from '../../components/ListenStatistic';
 import Space from '../../components/Space';
 import { DefaultContainerStyles } from '../../constants/styles';
 import { DEVICE_WIDTH } from '../../constants/variables';
+import useTrackingScreen from '../../hooks/useTrackingScreen';
 
 const genreOptions: Option[] = [
   { text: 'Tiểu sử & lịch sử', value: 'history' },
@@ -81,6 +82,8 @@ const creators = [
 ];
 
 const CreatorTab = () => {
+  useTrackingScreen();
+
   const [genre, setGenre] = useState<string>();
   const [sort, setSort] = useState<string>();
 

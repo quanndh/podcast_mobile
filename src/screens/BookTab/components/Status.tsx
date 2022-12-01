@@ -7,8 +7,8 @@ import { CalendarSvg, HeadsetSvg, PauseSvg, RedArrowRightSvg } from '../../../as
 import Space from '../../../components/Space';
 import { createRef } from 'react';
 import type { Modalize } from 'react-native-modalize';
-import SubcribeSheet, { SubcribeOption } from './SubcribeSheet';
 import AppText from '../../../components/AppText';
+import SubcribeSheet, { type SubcribeOption } from '../../../components/SubcribeSheet';
 interface StatusProps {}
 
 const Status: React.FC<StatusProps> = () => {

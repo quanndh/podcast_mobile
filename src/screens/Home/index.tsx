@@ -5,14 +5,16 @@ import AppSearchHeader from '../../components/AppSearchHeader';
 import AppImage from '../../components/AppImage';
 import Space from '../../components/Space';
 import { DefaultContainerStyles } from '../../constants/styles';
-import Recommendation from './components/Recommendation';
+import Recommendation, { RecommendationProps } from './components/Recommendation';
 import TopCreator from './components/TopCreator';
 import WeeklyTrending from './components/WeeklyTrending';
+import useTrackingScreen from '../../hooks/useTrackingScreen';
 
 const banner = 'https://img.freepik.com/free-vector/podcast-banner-template-design_52683-78195.jpg?w=2000';
-const recommend = [
+const recommend: RecommendationProps[] = [
   {
     topic: 'Sách tóm tắt nổi bật',
+    type: 'book',
     data: [
       {
         logo: 'https://i.scdn.co/image/ab67706c0000bebb734c62b9c135ef939c7ea952',
@@ -38,6 +40,7 @@ const recommend = [
   },
   {
     topic: 'Đề xuất 1',
+    type: 'podcast',
     data: [
       {
         logo: 'https://i.scdn.co/image/ab67706c0000bebb734c62b9c135ef939c7ea952',
@@ -63,10 +66,12 @@ const recommend = [
   },
 ];
 const HomeScreen = () => {
+  useTrackingScreen();
+
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <AppSearchHeader />
-      <AppImage uri={banner} style={styles.banner} />
+      {/* <AppImage uri={banner} style={styles.banner} /> */}
       <WeeklyTrending />
       <TopCreator />
       {recommend.map((item, index) => (

@@ -48,7 +48,6 @@ const LoginScreen = () => {
       await Storage.set('isLogin', 'true');
       navigationRoot.navigate('App');
     } catch (error) {
-      console.log({ error });
       await Storage.set('isLogin', 'false');
     }
   };

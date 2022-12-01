@@ -9,6 +9,7 @@ import CreatorRow from '../../components/CreatorRow';
 import Space from '../../components/Space';
 import { Colors } from '../../constants/colors';
 import { DefaultContainerStyles } from '../../constants/styles';
+import useTrackingScreen from '../../hooks/useTrackingScreen';
 
 const books = [
   {
@@ -64,6 +65,8 @@ const creators = [
 ];
 
 const PersonalTab = () => {
+  useTrackingScreen();
+
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <AppSearchHeader />

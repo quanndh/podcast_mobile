@@ -8,9 +8,10 @@ interface ProgressLineProps {
   progress: number;
   borderRadius?: number;
   width?: number;
+  color?: string;
 }
 
-const ProgressLine: React.FC<ProgressLineProps> = ({ progress, borderRadius = 0, width = DEVICE_WIDTH }) => {
+const ProgressLine: React.FC<ProgressLineProps> = ({ progress, borderRadius = 0, width = DEVICE_WIDTH, color }) => {
   return (
     <Bar
       borderWidth={0}
@@ -19,7 +20,7 @@ const ProgressLine: React.FC<ProgressLineProps> = ({ progress, borderRadius = 0,
       borderRadius={scale(borderRadius)}
       width={width}
       height={scale(2)}
-      color={Colors.accent}
+      color={color ?? Colors.accent}
     />
   );
 };

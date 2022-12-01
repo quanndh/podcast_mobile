@@ -10,4 +10,5 @@ export const Colors = {
   transactionBg: '#F8F8F8',
   green: 'rgba(76, 171, 139, 0.2);',
   success: '#26BB89',
+  authorText: '#353840',
 };
