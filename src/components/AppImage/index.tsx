@@ -1,28 +1,35 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { Image, ImageResizeMode, StyleProp, Platform, ImageStyle as NativeImageStyle } from 'react-native';
+import { StyleProp, View } from 'react-native';
 import FastImage, { ImageStyle, ResizeMode } from 'react-native-fast-image';
-import React from 'react';
+import React, { useState } from 'react';
+import { Fade, Placeholder, PlaceholderMedia } from 'rn-placeholder';
 
 interface AppImageProps {
-  style?: StyleProp<ImageStyle> | StyleProp<NativeImageStyle>;
+  style?: StyleProp<ImageStyle>;
   uri: string;
   resizeMode?: ResizeMode;
 }
 
 const AppImage: React.FC<AppImageProps> = ({ style, uri, resizeMode }) => {
-  if (Platform.OS === 'ios') {
-    return (
+  const [loading, setLoading] = useState(true);
+
+  return (
+    <View>
       <FastImage
         style={style as StyleProp<ImageStyle>}
         source={{
           uri: uri,
         }}
         resizeMode={resizeMode ?? 'cover'}
+        onLoadStart={() => setLoading(true)}
+        onLoadEnd={() => setLoading(false)}
       />
-    );
-  }
-
-  return <Image source={{ uri }} style={style as StyleProp<NativeImageStyle>} />;
+      {loading && (
+        <Placeholder Animation={Fade} style={{ position: 'absolute', zIndex: 8, top: 0, left: 0 }}>
+          <PlaceholderMedia style={style} />
+        </Placeholder>
+      )}
+    </View>
+  );
 };
 
 export default AppImage;

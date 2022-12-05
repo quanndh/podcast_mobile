@@ -43,7 +43,8 @@
     "react-native-super-grid": "^4.6.1",
     "react-native-svg": "^13.5.0",
     "react-native-tab-view": "^3.3.2",
-    "recoil": "^0.7.6"
+    "recoil": "^0.7.6",
+    "rn-placeholder": "^3.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

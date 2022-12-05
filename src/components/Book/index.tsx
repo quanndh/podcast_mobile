@@ -40,6 +40,7 @@ const styleFn = (size: 'small' | 'large') =>
     },
     logo: {
       height: size === 'small' ? '120@s' : '144@s',
+      width: size === 'small' ? '120@s' : '144@s',
       borderRadius: '12@s',
       marginBottom: '4@vs',
     },
