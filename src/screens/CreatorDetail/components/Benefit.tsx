@@ -94,6 +94,7 @@ const styles = ScaledSheet.create({
   },
   title: {
     fontWeight: '500',
+    color: Colors.black,
   },
   row: {
     flexDirection: 'row',

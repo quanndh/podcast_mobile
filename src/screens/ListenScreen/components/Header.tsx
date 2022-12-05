@@ -76,9 +76,9 @@ const Header: React.FC<HeaderProps> = ({ type, content }) => {
               </View>
               <Space size={12} />
               <View style={styles.row}>
-                <AppText style={{ fontWeight: '500' }}>{content.follower}</AppText>
+                <AppText style={{ fontWeight: '500', color: Colors.black }}>{content.follower}</AppText>
                 <Space size={4} />
-                <AppText style={styles.authorText}>Follower</AppText>
+                <AppText style={styles.authorText}>Theo dõi</AppText>
               </View>
             </View>
           )}
@@ -153,6 +153,7 @@ const styles = ScaledSheet.create({
     textAlign: 'center',
     fontSize: 16,
     fontWeight: '500',
+    color: Colors.black,
   },
   authorContainer: {
     flexDirection: 'row',
@@ -185,7 +186,7 @@ const styles = ScaledSheet.create({
   },
   statisticText: {
     color: Colors.grey,
-    fontSize: 16,
+    fontSize: 14,
   },
 });
 

@@ -142,6 +142,7 @@ const styles = ScaledSheet.create({
     lineHeight: 24,
     marginTop: '16@vs',
     marginBottom: '8@vs',
+    color: Colors.black,
   },
   balanceNote: {
     color: Colors.grey,
@@ -165,6 +166,7 @@ const styles = ScaledSheet.create({
     fontWeight: '500',
     fontSize: 12,
     lineHeight: 14,
+    color: Colors.black,
   },
   bankDetail: {
     color: Colors.grey,

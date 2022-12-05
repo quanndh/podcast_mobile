@@ -6,6 +6,7 @@ import { RedPlaySvg } from '../../../assets/icons';
 import AppButton from '../../../components/AppButton';
 import AppText from '../../../components/AppText';
 import BottomSheet from '../../../components/BottomSheet';
+import { Colors } from '../../../constants/colors';
 
 interface NotMemberSheetProps {
   onPressSubcribe: () => void;
@@ -33,6 +34,7 @@ const styles = ScaledSheet.create({
     lineHeight: 19,
     textAlign: 'center',
     marginBottom: '32@vs',
+    color: Colors.black,
   },
 });
 

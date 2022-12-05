@@ -107,6 +107,7 @@ const styles = ScaledSheet.create({
     fontWeight: '500',
     fontSize: 16,
     lineHeight: 19,
+    color: Colors.black,
   },
   action: {
     fontSize: 12,

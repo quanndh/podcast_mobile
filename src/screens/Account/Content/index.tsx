@@ -7,6 +7,7 @@ import AppText from '../../../components/AppText';
 import BottomSheet from '../../../components/BottomSheet';
 import Chip from '../../../components/Chip';
 import Space from '../../../components/Space';
+import { Colors } from '../../../constants/colors';
 import { DefaultContainerStyles } from '../../../constants/styles';
 import ContentItem from './components/ContentItem';
 
@@ -135,9 +136,11 @@ const styles = ScaledSheet.create({
     lineHeight: 19,
     textAlign: 'center',
     marginBottom: '16@vs',
+    color: Colors.black,
   },
   action: {
     marginVertical: '16@vs',
+    color: Colors.black,
   },
 });
 

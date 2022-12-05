@@ -107,6 +107,7 @@ const styles = ScaledSheet.create({
     marginRight: '8@s',
     fontSize: 12,
     fontWeight: '500',
+    color: Colors.black,
   },
   createdAt: {
     fontSize: 12,
@@ -114,6 +115,7 @@ const styles = ScaledSheet.create({
   },
   comment: {
     marginVertical: '8@vs',
+    color: Colors.black,
   },
   reply: {
     marginTop: '8@vs',

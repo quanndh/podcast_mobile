@@ -4,6 +4,7 @@ import { ScaledSheet } from 'react-native-size-matters';
 import AppText from '../../../components/AppText';
 import Creator from '../../../components/Creator';
 import Space from '../../../components/Space';
+import { Colors } from '../../../constants/colors';
 
 interface TopCreatorProps {}
 
@@ -60,6 +61,7 @@ const styles = ScaledSheet.create({
     lineHeight: 21,
     fontWeight: '700',
     marginBottom: '20@vs',
+    color: Colors.black,
   },
 });
 

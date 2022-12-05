@@ -209,6 +209,7 @@ const styles = ScaledSheet.create({
     fontWeight: '700',
     fontSize: 16,
     lineHeight: 19,
+    color: Colors.black,
   },
   intro: {
     fontSize: 12,
@@ -243,6 +244,7 @@ const styles = ScaledSheet.create({
     fontWeight: '700',
     fontSize: 16,
     lineHeight: 19,
+    color: Colors.black,
   },
   socialContainer: {
     flexDirection: 'row',

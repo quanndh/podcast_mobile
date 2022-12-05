@@ -72,6 +72,7 @@ const styles = ScaledSheet.create({
     fontSize: 16,
     lineHeight: 19,
     textAlign: 'center',
+    color: Colors.black,
   },
   row: {
     flexDirection: 'row',
@@ -89,6 +90,7 @@ const styles = ScaledSheet.create({
     fontWeight: '500',
     fontSize: 14,
     lineHeight: 17,
+    color: Colors.black,
   },
   benefit: {
     fontSize: 14,

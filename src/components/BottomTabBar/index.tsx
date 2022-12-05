@@ -234,6 +234,7 @@ const styles = ScaledSheet.create({
   bookTitle: {
     fontWeight: '500',
     fontSize: 14,
+    color: Colors.black,
   },
   bookAuthor: {
     color: Colors.grey,

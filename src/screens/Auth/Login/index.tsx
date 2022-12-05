@@ -119,6 +119,7 @@ const styles = ScaledSheet.create({
     lineHeight: 21,
     marginVertical: '40@vs',
     textAlign: 'center',
+    color: Colors.black,
   },
   ggBtn: {
     backgroundColor: Colors.black,

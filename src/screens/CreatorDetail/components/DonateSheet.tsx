@@ -75,6 +75,7 @@ const styles = ScaledSheet.create({
     lineHeight: 19,
     textAlign: 'center',
     marginBottom: '32@vs',
+    color: Colors.black,
   },
   subTitle: {
     fontWeight: '700',

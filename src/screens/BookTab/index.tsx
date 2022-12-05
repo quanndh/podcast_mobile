@@ -12,6 +12,7 @@ import { FlatGrid } from 'react-native-super-grid';
 import { DEVICE_WIDTH } from '../../constants/variables';
 import AppText from '../../components/AppText';
 import useTrackingScreen from '../../hooks/useTrackingScreen';
+import { Colors } from '../../constants/colors';
 
 const genreOptions: Option[] = [
   { text: 'Tiểu sử & lịch sử', value: 'history' },
@@ -105,6 +106,7 @@ const styles = ScaledSheet.create({
     lineHeight: 21,
     fontWeight: '700',
     marginVertical: '20@vs',
+    color: Colors.black,
   },
 });
 

@@ -83,7 +83,7 @@ const PersonalTab = () => {
       </View>
 
       <View style={styles.row}>
-        <AppText style={styles.title}>Đang theo dõi</AppText>
+        <AppText style={styles.title}>Đang nghe Sách tóm tắt</AppText>
         <Space />
         <ArrowRighrSvg />
       </View>
@@ -94,7 +94,7 @@ const PersonalTab = () => {
       </View>
 
       <View>
-        <AppText style={styles.title1}>Đang nghe sách tóm tắt</AppText>
+        <AppText style={styles.title1}>Đang theo dõi</AppText>
         <AppText style={styles.subTitle}>Các creator mà bạn đang theo dõi</AppText>
       </View>
       <View>
@@ -121,12 +121,14 @@ const styles = ScaledSheet.create({
     fontSize: 18,
     lineHeight: 21,
     marginVertical: '16@s',
+    color: Colors.black,
   },
   title1: {
     fontWeight: '700',
     fontSize: 18,
     lineHeight: 21,
     marginTop: '16@s',
+    color: Colors.black,
   },
   subTitle: {
     marginTop: '8@s',

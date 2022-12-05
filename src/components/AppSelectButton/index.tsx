@@ -7,6 +7,7 @@ import { Colors } from '../../constants/colors';
 import type { Modalize } from 'react-native-modalize';
 import BottomSheet from '../BottomSheet';
 import { useMemo } from 'react';
+import AppText from '../AppText';
 
 export type Option = {
   value: string;
@@ -42,9 +43,9 @@ const AppSelectButton: React.FC<AppSelectButtonProps> = ({ value, title, options
   return (
     <>
       <TouchableOpacity onPress={handleOpenSheet} style={styles.container}>
-        <Text numberOfLines={1} style={styles.text}>
+        <AppText numberOfLines={1} style={styles.text}>
           {valueText ?? title}
-        </Text>
+        </AppText>
         <ArrowDownSvg />
       </TouchableOpacity>
       <BottomSheet ref={ref} adjustToContentHeight>
@@ -52,7 +53,7 @@ const AppSelectButton: React.FC<AppSelectButtonProps> = ({ value, title, options
           <Text style={styles.title}>{title}</Text>
           {options.map((x) => (
             <TouchableOpacity key={x.value} style={styles.option} onPress={() => handleChooseOption(x)}>
-              <Text>{x.text}</Text>
+              <AppText>{x.text}</AppText>
             </TouchableOpacity>
           ))}
         </View>
@@ -77,7 +78,6 @@ const styles = ScaledSheet.create({
     paddingBottom: '16@vs',
   },
   text: {
-    color: Colors.grey,
     fontWeight: '500',
     fontSize: 14,
     lineHeight: 17,
@@ -88,11 +88,13 @@ const styles = ScaledSheet.create({
     fontSize: 16,
     lineHeight: 19,
     textAlign: 'center',
+    color: Colors.black,
   },
   option: {
     fontSize: 14,
     lineHeight: 17,
     marginVertical: '16@vs',
+    color: Colors.black,
   },
 });
 

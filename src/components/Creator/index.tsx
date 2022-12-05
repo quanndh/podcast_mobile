@@ -67,11 +67,13 @@ const styleFn = (size: 'small' | 'large') =>
       fontWeight: '700',
       lineHeight: '17@s',
       marginVertical: '8@vs',
+      color: Colors.black,
     },
     blackText: {
       fontSize: '12@s',
       fontWeight: '500',
       lineHeight: '14@s',
+      color: Colors.black,
     },
     greyText: {
       fontSize: '12@s',

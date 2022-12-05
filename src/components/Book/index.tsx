@@ -5,6 +5,7 @@ import { ScaledSheet } from 'react-native-size-matters';
 import { Colors } from '../../constants/colors';
 import type { AppTabParams } from '../../navigators/app.navigator';
 import AppImage from '../AppImage';
+import AppText from '../AppText';
 
 interface BookProps {
   author: string;
@@ -25,10 +26,10 @@ const Book: React.FC<BookProps> = ({ author, name, logo, size = 'small', type = 
   return (
     <TouchableOpacity style={styles.container} onPress={handlePress}>
       <AppImage uri={logo} style={styles.logo} />
-      <Text numberOfLines={2} style={styles.name}>
+      <AppText numberOfLines={2} style={styles.name}>
         {name}
-      </Text>
-      <Text style={styles.author}>{author}</Text>
+      </AppText>
+      <AppText style={styles.author}>{author}</AppText>
     </TouchableOpacity>
   );
 };
@@ -49,6 +50,7 @@ const styleFn = (size: 'small' | 'large') =>
       fontSize: 14,
       lineHeight: 17,
       fontWeight: '500',
+      color: Colors.black,
     },
     author: {
       fontSize: 14,

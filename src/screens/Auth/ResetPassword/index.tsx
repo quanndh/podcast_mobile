@@ -9,6 +9,7 @@ import AppButton from '../../../components/AppButton';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
 import type { AuthStackParams } from '../../../navigators/auth.navigation';
 import AppText from '../../../components/AppText';
+import { Colors } from '../../../constants/colors';
 
 interface ResetPasswordForm {
   password: string;
@@ -70,6 +71,7 @@ const styles = ScaledSheet.create({
     lineHeight: 21,
     marginVertical: '40@vs',
     textAlign: 'center',
+    color: Colors.black,
   },
 });
 

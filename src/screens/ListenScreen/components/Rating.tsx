@@ -54,6 +54,7 @@ const styles = ScaledSheet.create({
   title: {
     fontWeight: '700',
     marginBottom: '12@vs',
+    color: Colors.black,
   },
   modalContainer: {
     flex: 1,
@@ -88,6 +89,7 @@ const styles = ScaledSheet.create({
     fontSize: 16,
     textAlign: 'center',
     marginBottom: '12@vs',
+    color: Colors.black,
   },
 });
 

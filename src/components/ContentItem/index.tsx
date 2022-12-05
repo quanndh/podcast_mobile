@@ -141,6 +141,7 @@ const styles = ScaledSheet.create({
   },
   title: {
     fontWeight: '500',
+    color: Colors.black,
   },
   desc: {
     color: Colors.grey,
@@ -157,6 +158,7 @@ const styles = ScaledSheet.create({
     fontSize: 16,
     textAlign: 'center',
     marginBottom: '16@vs',
+    color: Colors.black,
   },
 });
 

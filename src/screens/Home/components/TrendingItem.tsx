@@ -29,10 +29,8 @@ const TrendingItem: React.FC<TrendingItemProps> = ({ logo, name, author, duratio
     <TouchableOpacity style={styles.container} onPress={handlePress}>
       <AppImage uri={logo} style={styles.logo} />
       <View style={styles.info}>
-        <View>
-          <AppText style={styles.name}>{name}</AppText>
-          <AppText style={styles.greyText}>{author}</AppText>
-        </View>
+        <AppText style={styles.name}>{name}</AppText>
+        <AppText style={styles.greyText}>{author}</AppText>
         <View style={styles.statistic}>
           <View style={styles.duration}>
             <PlayCircleSvg />
@@ -68,6 +66,7 @@ const styles = ScaledSheet.create({
     fontSize: 14,
     fontWeight: '500',
     lineHeight: 17,
+    color: Colors.black,
   },
   greyText: {
     color: Colors.grey,
@@ -79,7 +78,7 @@ const styles = ScaledSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     width: scale(DEVICE_WIDTH - 204),
-    // backgroundColor: 'blue',
+    color: Colors.black,
   },
   duration: {
     flexDirection: 'row',
@@ -88,6 +87,7 @@ const styles = ScaledSheet.create({
   blackText: {
     fontSize: 14,
     lineHeight: 17,
+    color: Colors.black,
   },
 });
 

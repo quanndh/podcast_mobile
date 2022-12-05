@@ -115,6 +115,7 @@ const styles = ScaledSheet.create({
   lable: {
     fontWeight: '500',
     marginBottom: '8@vs',
+    color: Colors.black,
   },
   inputContainer: {
     borderWidth: 1,

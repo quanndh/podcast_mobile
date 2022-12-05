@@ -56,6 +56,7 @@ const styles = ScaledSheet.create({
     fontWeight: '500',
     fontSize: 12,
     lineHeight: 14,
+    color: Colors.black,
   },
   greyText: {
     fontSize: 12,

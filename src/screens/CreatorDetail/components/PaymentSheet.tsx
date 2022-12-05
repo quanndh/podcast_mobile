@@ -75,12 +75,14 @@ const styles = ScaledSheet.create({
     lineHeight: 19,
     textAlign: 'center',
     marginBottom: '32@vs',
+    color: Colors.black,
   },
   subTitle: {
     fontWeight: '700',
     fontSize: 16,
     lineHeight: 19,
     marginBottom: '20@vs',
+    color: Colors.black,
   },
   row: {
     flexDirection: 'row',

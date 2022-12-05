@@ -67,6 +67,7 @@ const styles = ScaledSheet.create({
     lineHeight: 21,
     marginTop: '40@vs',
     textAlign: 'center',
+    color: Colors.black,
   },
   subTitle: {
     marginVertical: '24@vs',

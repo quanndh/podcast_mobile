@@ -88,6 +88,7 @@ const styles = ScaledSheet.create({
     fontWeight: '500',
     fontSize: 14,
     lineHeight: 17,
+    color: Colors.black,
   },
   textBtnActive: {
     color: Colors.accent,

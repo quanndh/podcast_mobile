@@ -14,11 +14,11 @@ const AppText: React.FC<AppTextProps> = (props) => {
 
 const styles = StyleSheet.create({
   text: {
+    color: Colors.black,
     fontSize: 14,
     fontWeight: '400',
     lineHeight: 17,
     fontFamily: 'SF Pro Display',
-    color: Colors.black,
   },
 });
 

@@ -124,7 +124,7 @@ const MemberScreen = () => {
       ListFooterComponent={
         <View style={[styles.sectionContainer, { marginBottom: 100 }]}>
           <View style={[styles.row, { justifyContent: 'flex-start' }]}>
-            <AppText style={styles.title}>Ưu đãi dành cho hội viên</AppText>
+            <AppText style={styles.title}>Hội viên kênh</AppText>
             <Space />
             <AppText style={styles.greyText}>(123)</AppText>
           </View>
@@ -165,6 +165,7 @@ const styles = ScaledSheet.create({
   },
   title: {
     fontWeight: '700',
+    color: Colors.black,
   },
   feeContainer: {
     borderWidth: 2,
@@ -178,6 +179,7 @@ const styles = ScaledSheet.create({
   feePrice: {
     fontWeight: '700',
     marginBottom: '8@vs',
+    color: Colors.black,
   },
   greyText: {
     color: Colors.grey,
@@ -204,6 +206,7 @@ const styles = ScaledSheet.create({
   name: {
     fontWeight: '500',
     marginBottom: '6@vs',
+    color: Colors.black,
   },
 });
 

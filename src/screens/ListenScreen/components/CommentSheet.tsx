@@ -216,7 +216,7 @@ const CommentSheet: FC<CommentSheetProps> = ({ firstComment, nComment }) => {
         ) : (
           <AvatarDefaultSvg height={scale(16)} width={scale(16)} />
         )}
-        <TextInput style={styles.input} placeholder="Viết bình luận" />
+        <TextInput placeholderTextColor={Colors.black} style={styles.input} placeholder="Viết bình luận" />
         <TouchableOpacity>
           <SendSvg />
         </TouchableOpacity>
@@ -279,6 +279,7 @@ const styles = ScaledSheet.create({
     fontWeight: '500',
     fontSize: 12,
     marginBottom: '8@vs',
+    color: Colors.black,
   },
   row: {
     flexDirection: 'row',
@@ -300,6 +301,7 @@ const styles = ScaledSheet.create({
   },
   modalTitle: {
     fontWeight: '500',
+    color: Colors.black,
   },
   line: {
     height: 1,

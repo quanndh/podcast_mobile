@@ -120,6 +120,7 @@ const styles = ScaledSheet.create({
   },
   name: {
     fontWeight: '500',
+    color: Colors.black,
   },
   desc: {
     fontWeight: '500',
@@ -143,6 +144,7 @@ const styles = ScaledSheet.create({
   blackText: {
     fontSize: 12,
     fontWeight: '500',
+    color: Colors.black,
   },
   greyText: {
     color: Colors.grey,

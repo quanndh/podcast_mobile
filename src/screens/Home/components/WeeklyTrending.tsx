@@ -7,6 +7,7 @@ import { scale, ScaledSheet } from 'react-native-size-matters';
 import AppText from '../../../components/AppText';
 import Chip from '../../../components/Chip';
 import Space from '../../../components/Space';
+import { Colors } from '../../../constants/colors';
 import { DEVICE_HEIGHT, DEVICE_WIDTH } from '../../../constants/variables';
 import { Helpers } from '../../../helpers';
 import TrendingItem from './TrendingItem';
@@ -144,6 +145,7 @@ const styles = ScaledSheet.create({
     fontSize: 18,
     lineHeight: 21,
     fontWeight: '700',
+    color: Colors.black,
   },
   weeklyTrendingContainer: {
     marginVertical: '16@vs',

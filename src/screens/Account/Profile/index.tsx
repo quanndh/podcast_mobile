@@ -96,6 +96,7 @@ const styles = ScaledSheet.create({
     fontWeight: '700',
     fontSize: 16,
     lineHeight: 19,
+    color: Colors.black,
   },
   statisticContainer: {
     marginTop: '24@s',
@@ -124,6 +125,7 @@ const styles = ScaledSheet.create({
     fontWeight: '700',
     fontSize: 16,
     lineHeight: 19,
+    color: Colors.black,
   },
   emptyText: {
     fontWeight: '500',

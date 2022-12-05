@@ -4,6 +4,7 @@ import { ScaledSheet } from 'react-native-size-matters';
 import AppText from '../../../components/AppText';
 import Book from '../../../components/Book';
 import Space from '../../../components/Space';
+import { Colors } from '../../../constants/colors';
 
 export interface RecommendationProps {
   topic: string;
@@ -38,6 +39,7 @@ const styles = ScaledSheet.create({
     lineHeight: 21,
     fontWeight: '700',
     marginBottom: '20@vs',
+    color: Colors.black,
   },
 });
 
