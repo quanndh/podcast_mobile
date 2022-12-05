@@ -68,3 +68,4 @@ export { default as StarSvg } from './star.svg';
 export { default as HeartRedCommentSvg } from './heart_red_cmt.svg';
 export { default as HeartGreyCommentSvg } from './heart_grey_cmt.svg';
 export { default as SendSvg } from './send.svg';
+export { default as WarningSvg } from './warning.svg';

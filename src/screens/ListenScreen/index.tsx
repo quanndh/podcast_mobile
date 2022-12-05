@@ -95,6 +95,7 @@ Cùng lắng nghe và thấu hiểu.`,
       style={styles.container}
       data={type === 'book' ? [] : data}
       keyExtractor={(_, index) => String(index) + type}
+      ItemSeparatorComponent={() => <View style={styles.seperator} />}
       ListHeaderComponent={<Header type={type} content={content} />}
       renderItem={renderItem}
       ListFooterComponent={<Space size={112} />}
@@ -106,6 +107,12 @@ const styles = ScaledSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
+  },
+  seperator: {
+    height: 1,
+    backgroundColor: Colors.selectBorder,
+    marginHorizontal: '12@s',
+    textAlign: 'center',
   },
 });
 
