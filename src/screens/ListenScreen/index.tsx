@@ -1,22 +1,55 @@
 import { NavigationProp, RouteProp, useNavigation, useRoute } from '@react-navigation/native';
-import React, { useCallback, useEffect, useState } from 'react';
-import { FlatList, ScrollView, View } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import React from 'react';
+import { FlatList, View } from 'react-native';
 import { scale, ScaledSheet } from 'react-native-size-matters';
-import AppImage from '../../components/AppImage';
-import AppSearchHeader from '../../components/AppSearchHeader';
-import AppText from '../../components/AppText';
+import ContentItem from '../../components/ContentItem';
+import Space from '../../components/Space';
 import { Colors } from '../../constants/colors';
 import useTrackingScreen from '../../hooks/useTrackingScreen';
 import type { AppTabParams } from '../../navigators/app.navigator';
-import ImageColors from 'react-native-image-colors';
-import { Helpers } from '../../helpers';
-import { FilledBookSvg, StarActiveSvg, UserOutlineSvg } from '../../assets/icons';
-import Space from '../../components/Space';
-import Player from './components/Player';
-import AppButton from '../../components/AppButton';
+
+import Header from './components/Header';
 
 interface ListenScreenProps {}
+
+const data: any = [
+  {
+    logo: 'https://cdn.dribbble.com/users/278624/screenshots/4413242/playlist_cover2.png',
+    name: 'How to face big desicion',
+    desc: `Một ngày có 24 giờ, chúng ta có nhiều thời gian hơn mình nghĩ. Nếu thật sự muốn bắt tay vào làm thì chẳng điều gi có thé ngän cán ban duoc. Podcast sê duoc lên sóng vão 10pm, tôi thú 3 häng tuân trên kênh YouTube...`,
+    duration: '1h 50m',
+    like: '12.4k',
+    comment: '12.4k',
+    createdAt: 'Sep 7',
+  },
+  {
+    logo: 'https://cdn.dribbble.com/users/278624/screenshots/4413242/playlist_cover2.png',
+    name: 'How to face big desicion',
+    desc: `Một ngày có 24 giờ, chúng ta có nhiều thời gian hơn mình nghĩ. Nếu thật sự muốn bắt tay vào làm thì chẳng điều gi có thé ngän cán ban duoc. Podcast sê duoc lên sóng vão 10pm, tôi thú 3 häng tuân trên kênh YouTube...`,
+    duration: '1h 50m',
+    like: '12.4k',
+    comment: '12.4k',
+    createdAt: 'Sep 7',
+  },
+  {
+    logo: 'https://cdn.dribbble.com/users/278624/screenshots/4413242/playlist_cover2.png',
+    name: 'How to face big desicion',
+    desc: `Một ngày có 24 giờ, chúng ta có nhiều thời gian hơn mình nghĩ. Nếu thật sự muốn bắt tay vào làm thì chẳng điều gi có thé ngän cán ban duoc. Podcast sê duoc lên sóng vão 10pm, tôi thú 3 häng tuân trên kênh YouTube...`,
+    duration: '1h 50m',
+    like: '12.4k',
+    comment: '12.4k',
+    createdAt: 'Sep 7',
+  },
+  {
+    logo: 'https://cdn.dribbble.com/users/278624/screenshots/4413242/playlist_cover2.png',
+    name: 'How to face big desicion',
+    desc: `Một ngày có 24 giờ, chúng ta có nhiều thời gian hơn mình nghĩ. Nếu thật sự muốn bắt tay vào làm thì chẳng điều gi có thé ngän cán ban duoc. Podcast sê duoc lên sóng vão 10pm, tôi thú 3 häng tuân trên kênh YouTube...`,
+    duration: '1h 50m',
+    like: '12.4k',
+    comment: '12.4k',
+    createdAt: 'Sep 7',
+  },
+];
 
 const ListenScreen: React.FC<ListenScreenProps> = () => {
   useTrackingScreen();
@@ -26,10 +59,14 @@ const ListenScreen: React.FC<ListenScreenProps> = () => {
     params: { type },
   } = useRoute<RouteProp<AppTabParams, 'ListenScreen'>>();
 
-  const [color, setColor] = useState<string>(Colors.accent);
+  const handlePress = (item: any) => {};
 
   const renderItem = ({ item }: any) => {
-    return <View />;
+    return (
+      <View style={{ paddingHorizontal: scale(12) }}>
+        <ContentItem data={item} onPress={() => handlePress(item)} />
+      </View>
+    );
   };
 
   const content = {
@@ -41,95 +78,26 @@ const ListenScreen: React.FC<ListenScreenProps> = () => {
     like: '23.3k',
     duration: '3:24',
     follower: '25.4k',
+    desc: `Chào các bạn, mình là Sun. Các bạn đang lắng nghe Sunhuyn Podcast. 
+Nếu có những ngày cảm thấy chênh vênh hãy quay về đây và yêu lấy chính mình. 
+Cùng lắng nghe và thấu hiểu. Nếu có những ngày cảm thấy chênh vênh hãy quay về đây và yêu lấy chính mình. Cùng lắng nghe và thấu hiểu.
+Nếu có những ngày cảm thấy chênh vênh hãy quay về đây và yêu lấy chính mình. 
+Cùng lắng nghe và thấu hiểu.Nếu có những ngày cảm thấy chênh vênh hãy quay về đây và yêu lấy chính mình. Cùng lắng nghe và thấu hiểu.
+Nếu có những ngày cảm thấy chênh vênh hãy quay về đây và yêu lấy chính mình. 
+Cùng lắng nghe và thấu hiểu.  
+Cùng lắng nghe và thấu hiểu.Nếu có những ngày cảm thấy chênh vênh hãy quay về đây và yêu lấy chính mình. 
+Cùng lắng nghe và thấu hiểu.`,
   };
-
-  const getColors = useCallback(async () => {
-    const result = await ImageColors.getColors(content.logo, {
-      fallback: '#228B22',
-      cache: true,
-      key: content.logo,
-    });
-
-    switch (result.platform) {
-      case 'android':
-        setColor(result.vibrant ?? Colors.accent);
-        break;
-      case 'ios':
-        setColor(result.secondary);
-        break;
-      default:
-        throw new Error('Unexpected platform key');
-    }
-  }, [content.logo]);
-
-  useEffect(() => {
-    getColors();
-  }, [content.logo, getColors]);
 
   return (
     <FlatList
       showsVerticalScrollIndicator={false}
       style={styles.container}
-      data={[]}
+      data={type === 'book' ? [] : data}
       keyExtractor={(_, index) => String(index) + type}
-      ListHeaderComponent={
-        <View>
-          <View style={{ paddingHorizontal: scale(12) }}>
-            <AppSearchHeader />
-          </View>
-          <LinearGradient colors={['rgba(255, 255, 255, 0)', 'rgba(185, 72, 79, 0.08)']} style={styles.accountInfo}>
-            <View style={styles.playerContainer}>
-              <AppImage uri={content.logo} style={styles.logo} />
-              <AppText style={styles.contentName}>{content.name}</AppText>
-              {type === 'book' ? (
-                <View style={styles.authorContainer}>
-                  <View style={styles.row}>
-                    <FilledBookSvg />
-                    <Space />
-                    <AppText style={styles.authorText}>Sách tóm tắt</AppText>
-                  </View>
-                  <Space size={12} />
-                  <View style={styles.row}>
-                    <UserOutlineSvg />
-                    <Space />
-                    <AppText style={styles.authorText}>{content.author}</AppText>
-                  </View>
-                  <Space size={12} />
-                  <View style={styles.row}>
-                    <StarActiveSvg />
-                    <Space />
-                    <AppText style={styles.authorText}>{content.start}</AppText>
-                  </View>
-                </View>
-              ) : (
-                <View style={styles.authorContainer}>
-                  <View style={styles.row}>
-                    <AppImage uri={content.logo} style={styles.authorAva} />
-                    <Space />
-                    <AppText style={styles.authorText}>{content.author}</AppText>
-                  </View>
-                  <Space size={12} />
-                  <View style={styles.row}>
-                    <AppText style={{ fontWeight: '500' }}>{content.follower}</AppText>
-                    <Space size={4} />
-                    <AppText style={styles.authorText}>Follower</AppText>
-                  </View>
-                </View>
-              )}
-              <Player duration={content.duration} color={color} />
-              {type === 'book' ? (
-                <AppButton transparent title="Đăng ký gói" onPress={() => {}} />
-              ) : (
-                <>
-                  <AppButton transparent title={`Ủng hộ cà phê cho ${content.author}`} onPress={() => {}} />
-                  <AppButton transparent title="Đăng ký hội viên" onPress={() => {}} />
-                </>
-              )}
-            </View>
-          </LinearGradient>
-        </View>
-      }
+      ListHeaderComponent={<Header type={type} content={content} />}
       renderItem={renderItem}
+      ListFooterComponent={<Space size={112} />}
     />
   );
 };
@@ -138,42 +106,6 @@ const styles = ScaledSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
-  },
-  accountInfo: {
-    paddingHorizontal: '12@s',
-    paddingVertical: '12@vs',
-  },
-  playerContainer: {},
-  logo: {
-    height: '120@s',
-    width: '120@s',
-    borderRadius: '8@s',
-    alignSelf: 'center',
-  },
-  contentName: {
-    marginVertical: '16@vs',
-    textAlign: 'center',
-    fontSize: 16,
-    fontWeight: '500',
-  },
-  authorContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  row: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  authorText: {
-    fontSize: 12,
-    fontWeight: '500',
-    color: Colors.authorText,
-  },
-  authorAva: {
-    height: '20@s',
-    width: '20@s',
-    borderRadius: '20@s',
   },
 });
 

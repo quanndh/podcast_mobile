@@ -33,7 +33,8 @@ const Player: React.FC<PlayerProps> = ({ duration, color }) => {
 
 const styles = ScaledSheet.create({
   container: {
-    marginVertical: '20@vs',
+    marginTop: '20@vs',
+    marginBottom: '10@vs',
   },
   progressRow: {
     flex: 1,

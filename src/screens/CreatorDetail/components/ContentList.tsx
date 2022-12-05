@@ -5,6 +5,7 @@ import { scale, ScaledSheet } from 'react-native-size-matters';
 import { DotsCircleSvg, DotsSvg, HeartSvg } from '../../../assets/icons';
 import AppImage from '../../../components/AppImage';
 import AppText from '../../../components/AppText';
+import ContentItem from '../../../components/ContentItem';
 import Space from '../../../components/Space';
 import { Colors } from '../../../constants/colors';
 import NotMemberSheet from './NotMemberSheet';
@@ -68,37 +69,7 @@ const ContentList: React.FC<ContentListProps> = ({ isMember, onViewAll }) => {
   };
 
   const renderItem = ({ item }: any) => {
-    return (
-      <TouchableOpacity style={styles.itemContainer} onPress={() => handlePressItem(item)}>
-        <View style={[styles.row, { alignItems: 'stretch', marginBottom: scale(12) }]}>
-          <AppImage uri={item.logo} style={styles.logo} />
-          <View style={{ flex: 1, justifyContent: 'space-between' }}>
-            <View style={styles.row}>
-              <AppText style={styles.title}>{item.name}</AppText>
-              <DotsSvg />
-            </View>
-            <AppText numberOfLines={4} style={styles.desc}>
-              {item.desc}
-            </AppText>
-          </View>
-        </View>
-        <View style={styles.row}>
-          <AppText style={styles.desc}>{`${item.createdAt} • ${item.duration}`}</AppText>
-          <View style={styles.row}>
-            <View style={styles.row}>
-              <DotsCircleSvg />
-              <Space />
-              <AppText style={styles.number}>{item.comment}</AppText>
-            </View>
-            <View style={[styles.row, { marginLeft: scale(20) }]}>
-              <HeartSvg />
-              <Space />
-              <AppText style={styles.number}>{item.like}</AppText>
-            </View>
-          </View>
-        </View>
-      </TouchableOpacity>
-    );
+    return <ContentItem data={item} onPress={() => handlePressItem(item)} />;
   };
 
   return (
