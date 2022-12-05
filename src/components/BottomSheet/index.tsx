@@ -22,17 +22,19 @@ const BottomSheet = React.forwardRef<Modalize, BottomSheetProps>(
         <Portal>
           <Modalize
             FooterComponent={footer}
-            flatListProps={flatlistProps}
-            withReactModal
-            disableScrollIfPossible
+            flatListProps={{
+              ...flatlistProps,
+              nestedScrollEnabled: true,
+            }}
+            keyboardAvoidingBehavior="height"
             withOverlay={withOverlay}
             avoidKeyboardLikeIOS
             onClose={onClose}
             snapPoint={snapPoint ?? DEVICE_HEIGHT / 2}
-            adjustToContentHeight={adjustToContentHeight}
             ref={ref}
             handlePosition="inside"
             modalStyle={styles.container}
+            closeOnOverlayTap={true}
           />
         </Portal>
       );
@@ -40,11 +42,11 @@ const BottomSheet = React.forwardRef<Modalize, BottomSheetProps>(
     return (
       <Portal>
         <Modalize
-          withReactModal
-          disableScrollIfPossible
+          closeOnOverlayTap={true}
           withOverlay={withOverlay}
           avoidKeyboardLikeIOS
           onClose={onClose}
+          scrollViewProps={{ nestedScrollEnabled: true }}
           snapPoint={snapPoint ?? DEVICE_HEIGHT / 2}
           adjustToContentHeight={adjustToContentHeight}
           ref={ref}

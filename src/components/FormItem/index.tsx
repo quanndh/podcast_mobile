@@ -119,7 +119,7 @@ const styles = ScaledSheet.create({
   inputContainer: {
     borderWidth: 1,
     borderColor: Colors.selectBorder,
-    paddingVertical: Platform.OS === 'android' ? '4@vs' : '12@vs',
+    paddingVertical: Platform.OS === 'android' ? '2@vs' : '12@vs',
     paddingHorizontal: '8@s',
     borderRadius: '12@s',
     flexDirection: 'row',

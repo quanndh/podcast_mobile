@@ -237,19 +237,7 @@ const CommentSheet: FC<CommentSheetProps> = ({ firstComment, nComment }) => {
           <AppText style={styles.text}>{firstComment.comment}</AppText>
         </View>
       </TouchableOpacity>
-      <BottomSheet
-        ref={ref}
-        snapPoint={DEVICE_HEIGHT / 2.2}
-        withOverlay={false}
-        flatlistProps={{
-          data: comments,
-          renderItem: renderItem,
-          keyExtractor: (_, index) => String(index) + 'comment',
-          ItemSeparatorComponent: () => <Space size={20} />,
-          ListFooterComponent: <Space size={40} />,
-          showsVerticalScrollIndicator: false,
-        }}
-      />
+
       <BottomSheet
         ref={ref}
         snapPoint={DEVICE_HEIGHT / 2.2}

@@ -9,8 +9,8 @@ export const DefaultContainerStyles = {
 export const ShadowStyle = {
   shadowColor: '#000',
   shadowOffset: {
-    width: 0,
-    height: 4,
+    width: 1,
+    height: 2,
   },
   shadowOpacity: 0.33,
   shadowRadius: 3.84,
